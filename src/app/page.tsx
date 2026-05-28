@@ -5,43 +5,13 @@ import { MouseGradient } from "@/components/mouse-gradient";
 import { PremiumCursor } from "@/components/premium-cursor";
 import { ScrollProgress } from "@/components/scroll-progress";
 import { ScrollReveal } from "@/components/scroll-reveal";
+import { ExpertiseCarousel } from "@/components/expertise-carousel";
 
 const NAV_LINKS = [
   { href: "#expertise", label: "Expertise" },
   { href: "#ventures", label: "Ventures" },
   { href: "#approach", label: "Approach" },
   { href: "#team", label: "Team" },
-];
-
-const EXPERTISE_CARDS = [
-  {
-    icon: "architecture",
-    title: "Product Strategy",
-    description:
-      "Defining the roadmap from inception to launch. We identify market opportunities, validate technical feasibility, and craft product visions that align business objectives with user needs.",
-    tag: "Strategy",
-  },
-  {
-    icon: "code_blocks",
-    title: "Full-Stack Development",
-    description:
-      "End-to-end engineering with modern frameworks. From reactive frontends to resilient microservices, we build systems that scale gracefully under demanding conditions.",
-    tag: "Engineering",
-  },
-  {
-    icon: "memory",
-    title: "AI & Machine Learning",
-    description:
-      "Integrating intelligent algorithms to automate workflows and unlock insights. From predictive models to generative AI, we embed intelligence at the core of your product.",
-    tag: "Intelligence",
-  },
-  {
-    icon: "cloud",
-    title: "Cloud Infrastructure",
-    description:
-      "Architecting secure, scalable cloud environments optimized for performance. Multi-region deployments, zero-downtime releases, and infrastructure as code built for growth.",
-    tag: "Infrastructure",
-  },
 ];
 
 const STATS = [
@@ -283,70 +253,7 @@ export default function Home() {
         <div className="section-divider" />
 
         {/* ====== EXPERTISE SECTION ====== */}
-        <section className="py-24 md:py-36 px-6 md:px-20 relative" id="expertise">
-          <div className="max-w-[1440px] mx-auto">
-            {/* Section header */}
-            <ScrollReveal>
-              <div className="mb-20 flex flex-col md:flex-row md:items-end justify-between gap-6">
-                <div>
-                  <div className="uppercase tracking-[0.2em] text-[10px] text-primary/50 font-medium mb-4">
-                    Core Competencies
-                  </div>
-                  <h2 className="text-3xl md:text-5xl text-on-surface tracking-[-0.03em] font-bold leading-[1.1]">
-                    Expertise &
-                    <br />
-                    <span className="text-gradient-subtle">Services</span>
-                  </h2>
-                </div>
-                <p className="text-base text-on-surface-variant/60 max-w-sm font-light leading-relaxed">
-                  Our core capabilities designed to architect scalable,
-                  resilient, and forward-thinking digital platforms.
-                </p>
-              </div>
-            </ScrollReveal>
-
-            {/* Cards grid */}
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-5">
-              {EXPERTISE_CARDS.map((card, i) => (
-                <ScrollReveal key={card.title} delay={i * 80} direction="up" distance={30}>
-                  <div className="glass-panel card-hover card-glow-border rounded-2xl p-8 h-full cursor-pointer group relative overflow-hidden">
-                    {/* Subtle gradient accent on hover */}
-                    <div className="absolute top-0 right-0 w-32 h-32 bg-primary/5 rounded-full blur-[60px] opacity-0 group-hover:opacity-100 transition-opacity duration-700 -translate-y-1/2 translate-x-1/2" />
-
-                    <div className="relative z-10">
-                      <div className="w-12 h-12 rounded-xl bg-surface-container-high flex items-center justify-center mb-7 text-primary group-hover:bg-primary/10 transition-colors duration-500">
-                        <span className="material-symbols-outlined text-[22px]">
-                          {card.icon}
-                        </span>
-                      </div>
-
-                      <div className="uppercase tracking-[0.15em] text-[9px] text-primary/40 font-medium mb-3">
-                        {card.tag}
-                      </div>
-
-                      <h3 className="text-lg font-semibold text-on-surface mb-3 tracking-[-0.01em]">
-                        {card.title}
-                      </h3>
-
-                      <p className="text-sm text-on-surface-variant/60 font-light leading-relaxed">
-                        {card.description}
-                      </p>
-
-                      <div className="mt-8 flex items-center gap-2 opacity-0 group-hover:opacity-100 transition-all duration-300 translate-x-[-8px] group-hover:translate-x-0">
-                        <span className="uppercase tracking-[0.15em] text-[9px] text-primary font-medium">
-                          Discover
-                        </span>
-                        <span className="material-symbols-outlined text-primary text-[14px]">
-                          arrow_forward
-                        </span>
-                      </div>
-                    </div>
-                  </div>
-                </ScrollReveal>
-              ))}
-            </div>
-          </div>
-        </section>
+        <ExpertiseCarousel />
 
         <div className="section-divider" />
 
