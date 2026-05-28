@@ -43,9 +43,8 @@ const VENTURES = [
     description:
       "Real-time trading execution engine processing 10k+ tx/sec with sub-millisecond latency.",
     tag: "Fintech",
-    image:
-      "https://lh3.googleusercontent.com/aida-public/AB6AXuDD3Ed8az5N31HraKPEEqVJDdtOdRgxgFuVx5I-KDTTmtxpEM6mHYtLXexf3ju6AnUd2l5Ixe0RmrVSUcG26iuHbdx1NVqA_TRhGL-8NFzGhXYfHo-VhKnBZ3QwTkVbOK34F0QpAJ15Y7muTQVEt96vojjqW5HOyrYUwLmRu5Yx3hcHRllHeZ37ZQfYaz6xY43CK5ypvvAoLd44fJSHnROkARLNSzM1EnYyZN0QrvrNAYdUtnxbr0zRnSwbg0UjO64s6KDzSnnjdIM",
-    alt: "Fintech Dashboard",
+    image: "/images/venture-nexus-financial.png",
+    alt: "Nexus Financial — Real-time Trading Dashboard",
     offset: false,
   },
   {
@@ -53,9 +52,8 @@ const VENTURES = [
     description:
       "Predictive maintenance AI for aerospace logistics, reducing downtime by 34%.",
     tag: "AI/ML",
-    image:
-      "https://lh3.googleusercontent.com/aida-public/AB6AXuCVS4v2egfHS-TdrlON1FABh4Lpr9kLx6Ju6Ho-YOkTHsKqq6LWBFNC8sRpGhhU3lLU2SjtfeQa2z9IKPRavJnK8WGuX1hywC1fa0UmPP1RRxwrhCw4rRW-AHT3Jddi7HoUC7IOMz13Edivsl3UTji8cb_utXaxYgQ_IeL2F6Swjqy-m__cQgetuaJrEKeW9R8qb4uk9I264CIEl6mL9M0a9jh8ctU0vjnmTC13eCduT5Lt5BWtz3YXi5rKqBHgeg9Gy9kRHs_gP98",
-    alt: "Hardware Integration",
+    image: "/images/venture-aerologix.png",
+    alt: "AeroLogix — Predictive Maintenance AI",
     offset: true,
   },
 ];
@@ -94,9 +92,8 @@ const TEAM_MEMBERS = [
     description:
       "Visionary leader with 15+ years in disruptive technology and product strategy.",
     num: "01",
-    image:
-      "https://lh3.googleusercontent.com/aida-public/AB6AXuDDafczTE0c6RGKaL4WSrDCX9-OeRfw77sG-F0rCQo3a4TtE4DZl2qQn5o00JUBb_3UgtLgrOznVZdflSDx77zlHqwGyzncF-Xumz36DfYQZWdt0smQATFNPI1UXRIbLfbpxC8Coy0sbaNmqwAxZPqoQOnx68wXe7_DPVQvnTUJMtv7a5hDggg-nOCg72JM7ecwbgOIumx9Q2n-6xGnoYdIVAIhDghyEOwRI44cXACMOkmDq2qbutK9aVM97lmErDATP-niJIfKMJ0",
-    alt: "Elena Vance - Founder & CEO",
+    image: "/images/team-elena-vance.png",
+    alt: "Elena Vance — Founder & CEO",
   },
   {
     name: "Marcus Chen",
@@ -104,9 +101,8 @@ const TEAM_MEMBERS = [
     description:
       "Expert architect specializing in distributed systems and high-precision engineering.",
     num: "02",
-    image:
-      "https://lh3.googleusercontent.com/aida-public/AB6AXuDGiZVshg_2b7vGAMqcpmFEAQFzm6VEaacILtTG2UvMCq2hU_8fZ-Kw5cv9bZ0QVwkPy84uRPwn68AEQ36oOBZTfx517toT5EgDzAvGhfImmAWEglaNKJeLRZS3nrzvXsN4xAtVoOMlPWJ79AC3PU5FeSkZDisKUlAEZoLKyp96b95qpMGy1-30PH9sfIfgk5I8JEU5ABjIr_AIoSHFNiifmV7UzObixfayUqjzszITEjvWZ8lE7tniyRe9czHEh24p_3610U8yn6Q",
-    alt: "Marcus Chen - Chief Technology Officer",
+    image: "/images/team-marcus-chen.png",
+    alt: "Marcus Chen — Chief Technology Officer",
   },
   {
     name: "Sienna Rivers",
@@ -114,9 +110,8 @@ const TEAM_MEMBERS = [
     description:
       "Award-winning designer focused on human-centric interfaces and brand narratives.",
     num: "03",
-    image:
-      "https://lh3.googleusercontent.com/aida-public/AB6AXuABMaBMzKGtWizniFUTT_vO5DdTh5H4myUzgd049S44Comi3s03iUNsggjgWpms2mxwHmFxchviKJwhUjHbxWefw6jkXYZ9J-gBEWUVRNny3z2s741lAtOztuS7wvb7Q9-0TH8Kesus3_-KSAIsSw_v_kxor3TEAvkw9unRj2_dRPNQpKtoJUeUz08VlZuJZcgLGFF8cXHfYlmQGZFdK2gV9aOcoHOWg-wNn0_T0OrjVCiWbNzh9GU4mxgtbsvAcmOXc1yptWbLQM8",
-    alt: "Sienna Rivers - Design Director",
+    image: "/images/team-sienna-rivers.png",
+    alt: "Sienna Rivers — Design Director",
   },
 ];
 
@@ -145,7 +140,7 @@ export default function Home() {
             <img
               alt="StackOne Logo"
               className="w-8 h-8 rounded"
-              src="https://lh3.googleusercontent.com/aida-public/AB6AXuCsm5oVYuzy4bNcfnqjYU64YVGCX6hheX_CQlOHtfRpSEDs5NCl9G00FgLJ00waqutu9u5-B9BKAErjKRWhrVOeRqXPg81THWGi9EeiaMaVzzmcIS76gewu1hdzfhcHMLH60j8NU4BuxYnpMzwoa-iIoxII9gJBteI9QN8gzAonBhguBhSzd76aUYsh4AHi7yg4vHBm0K8jBZH82Z16ZgfwCLYJmRX7HQBGGQO6Yam4Nl7LxLiB1yw8nMPeCWoGHbInhYMG8Eaz3dk"
+              src="/images/stackone-logo.png"
             />
             StackOne
           </a>
