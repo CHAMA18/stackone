@@ -31,55 +31,81 @@ const STATS = [
 
 const VENTURES = [
   {
-    title: "Nexus Financial",
+    title: "PayRoute Africa",
     description:
-      "Real-time trading execution engine processing 10K+ transactions per second with sub-millisecond latency and 99.999% reliability. Built for institutional-grade trading at global scale.",
+      "Seamless cross-border payment infrastructure connecting 40+ African currencies with real-time settlement, mobile money integration, and compliance across 25 countries. Powering the future of African commerce.",
     tag: "Fintech",
-    image: "/images/venture-nexus-financial.png",
-    alt: "Nexus Financial — Real-time Trading Dashboard",
+    image: "/images/venture-payroute-africa.png",
+    alt: "PayRoute Africa — Cross-border Payment Infrastructure",
     offset: false,
     metrics: [
-      { label: "Transactions/sec", value: "10K+" },
-      { label: "Latency", value: "<1ms" },
+      { label: "Countries", value: "25+" },
+      { label: "Transactions/mo", value: "8M+" },
     ],
   },
   {
-    title: "AeroLogix",
+    title: "Dawa Clinic",
     description:
-      "Predictive maintenance AI for aerospace logistics, reducing fleet downtime by 34% and saving $12M annually in operational costs across 200+ aircraft worldwide.",
-    tag: "AI/ML",
-    image: "/images/venture-aerologix.png",
-    alt: "AeroLogix — Predictive Maintenance AI",
-    offset: true,
-    metrics: [
-      { label: "Downtime Reduction", value: "34%" },
-      { label: "Annual Savings", value: "$12M" },
-    ],
-  },
-  {
-    title: "Quantum Health",
-    description:
-      "HIPAA-compliant telehealth platform serving 2M+ patients with real-time video consultations, AI-powered diagnostics, and seamless EHR integration across 500+ providers.",
+      "AI-powered telehealth platform bringing quality healthcare to underserved communities across Africa. Real-time video consultations, symptom triage, pharmacy delivery, and EHR integration serving 1.5M+ patients.",
     tag: "HealthTech",
-    image: "/images/venture-nexus-financial.png",
-    alt: "Quantum Health — Telehealth Platform",
-    offset: false,
+    image: "/images/venture-dawa-clinic.png",
+    alt: "Dawa Clinic — AI-powered Telehealth Platform",
+    offset: true,
     metrics: [
-      { label: "Patients Served", value: "2M+" },
-      { label: "Providers", value: "500+" },
+      { label: "Patients Served", value: "1.5M+" },
+      { label: "Clinics Connected", value: "340+" },
     ],
   },
   {
-    title: "VaultChain",
+    title: "Event Space",
     description:
-      "Enterprise-grade blockchain custody solution managing $4B+ in digital assets with multi-signature security, real-time auditing, and regulatory compliance across 30 jurisdictions.",
-    tag: "Web3",
-    image: "/images/venture-aerologix.png",
-    alt: "VaultChain — Digital Asset Custody",
+      "End-to-end event management and venue booking platform built for Africa's vibrant events industry. From weddings to conferences, manage ticketing, vendors, seating, and live streaming — all in one place.",
+    tag: "EventTech",
+    image: "/images/venture-event-space.png",
+    alt: "Event Space — Event Management & Venue Booking",
+    offset: false,
+    metrics: [
+      { label: "Events Hosted", value: "12K+" },
+      { label: "Venues Listed", value: "2K+" },
+    ],
+  },
+  {
+    title: "AgroSync",
+    description:
+      "Precision agritech platform leveraging satellite imagery, IoT sensors, and AI to help 50K+ African farmers optimize yields, manage irrigation, and access real-time market pricing for smarter farming decisions.",
+    tag: "AgriTech",
+    image: "/images/venture-agrosync.png",
+    alt: "AgroSync — Precision Farming Intelligence",
     offset: true,
     metrics: [
-      { label: "Assets Managed", value: "$4B+" },
-      { label: "Jurisdictions", value: "30+" },
+      { label: "Farmers Empowered", value: "50K+" },
+      { label: "Yield Increase", value: "28%" },
+    ],
+  },
+  {
+    title: "EduLift Africa",
+    description:
+      "Adaptive e-learning platform delivering accredited courses, vocational training, and mentorship to 800K+ learners across the continent. AI-personalized curricula in 12 languages with offline-first mobile access.",
+    tag: "EdTech",
+    image: "/images/venture-edulift.png",
+    alt: "EduLift Africa — Adaptive E-Learning Platform",
+    offset: false,
+    metrics: [
+      { label: "Active Learners", value: "800K+" },
+      { label: "Languages", value: "12" },
+    ],
+  },
+  {
+    title: "SolarGrid",
+    description:
+      "Intelligent solar energy management platform optimizing off-grid and hybrid power systems across Africa. Real-time monitoring, predictive maintenance, and automated load balancing for 500+ installations.",
+    tag: "CleanTech",
+    image: "/images/venture-solargrid.png",
+    alt: "SolarGrid — Smart Solar Energy Management",
+    offset: true,
+    metrics: [
+      { label: "Installations", value: "500+" },
+      { label: "Energy Output", value: "120MW" },
     ],
   },
 ];
