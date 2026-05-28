@@ -404,29 +404,29 @@ export default function Home() {
                   distance={40}
                 >
                   <div className={`group cursor-pointer ${venture.offset ? "md:mt-16" : ""}`}>
-                    <div className="venture-image-container aspect-[4/3] rounded-2xl overflow-hidden bg-surface-container-high relative mb-8 ring-1 ring-white/[0.03]">
-                      <ParallaxImage
-                        src={venture.image}
-                        alt={venture.alt}
-                        speed={0.08}
-                        className="w-full h-full"
-                      />
-                      <div className="absolute inset-0 bg-gradient-to-t from-surface/80 via-transparent to-transparent z-10 opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
-                      {/* Logo overlay on image */}
-                      <div className="absolute top-5 left-5 z-20">
-                        <div className="w-12 h-12 rounded-xl overflow-hidden bg-surface/60 backdrop-blur-xl border border-white/[0.08] shadow-lg shadow-black/20 flex items-center justify-center p-1.5">
-                          {/* eslint-disable-next-line @next/next/no-img-element */}
-                          <img
-                            src={venture.logo}
-                            alt={`${venture.title} logo`}
-                            className="w-full h-full object-contain"
-                          />
-                        </div>
+                    <div className="aspect-[4/3] rounded-2xl overflow-hidden bg-gradient-to-br from-surface-container-high via-surface/80 to-surface-container-high relative mb-8 ring-1 ring-white/[0.04] flex items-center justify-center">
+                      {/* Ambient glow behind logo */}
+                      <div className="absolute inset-0 flex items-center justify-center">
+                        <div className="w-[60%] h-[60%] rounded-full bg-primary/[0.07] blur-[80px] group-hover:bg-primary/[0.12] transition-all duration-700" />
                       </div>
-                      <div className="absolute bottom-6 left-6 z-20 transform translate-y-4 opacity-0 group-hover:translate-y-0 group-hover:opacity-100 transition-all duration-500">
+                      {/* Logo as main feature */}
+                      <div className="relative z-10 w-[45%] max-w-[200px] aspect-square rounded-2xl overflow-hidden bg-surface/40 backdrop-blur-sm border border-white/[0.06] shadow-2xl shadow-black/30 flex items-center justify-center p-4 group-hover:scale-105 group-hover:border-white/[0.12] transition-all duration-500">
+                        {/* eslint-disable-next-line @next/next/no-img-element */}
+                        <img
+                          src={venture.logo}
+                          alt={`${venture.title} logo`}
+                          className="w-full h-full object-contain drop-shadow-lg"
+                        />
+                      </div>
+                      {/* Hover overlay with CTA */}
+                      <div className="absolute inset-0 bg-gradient-to-t from-surface/70 via-transparent to-transparent z-20 opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
+                      <div className="absolute bottom-5 left-5 right-5 z-30 transform translate-y-4 opacity-0 group-hover:translate-y-0 group-hover:opacity-100 transition-all duration-500 flex items-center justify-between">
                         <span className="inline-flex items-center gap-2 bg-white/[0.06] backdrop-blur-xl border border-white/[0.1] text-white px-5 py-2.5 rounded-full uppercase tracking-[0.2em] text-[9px] font-medium">
                           View Case Study
                           <span className="material-symbols-outlined text-[14px]">arrow_outward</span>
+                        </span>
+                        <span className="uppercase tracking-[0.15em] text-[9px] text-on-surface-variant/50 border border-white/[0.06] px-3 py-1.5 rounded-md font-medium bg-surface/40 backdrop-blur-xl">
+                          {venture.tag}
                         </span>
                       </div>
                     </div>
