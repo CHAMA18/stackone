@@ -6,6 +6,12 @@ import { PremiumCursor } from "@/components/premium-cursor";
 import { ScrollProgress } from "@/components/scroll-progress";
 import { ScrollReveal } from "@/components/scroll-reveal";
 import { ExpertiseCarousel } from "@/components/expertise-carousel";
+import { TrustMarquee } from "@/components/trust-marquee";
+import { AnimatedCounter } from "@/components/animated-counter";
+import { TechStack } from "@/components/tech-stack";
+import { Testimonials } from "@/components/testimonials";
+import { TextReveal } from "@/components/text-reveal";
+import { ParallaxImage } from "@/components/parallax-image";
 
 const NAV_LINKS = [
   { href: "#expertise", label: "Expertise" },
@@ -15,30 +21,64 @@ const NAV_LINKS = [
 ];
 
 const STATS = [
-  { value: "200+", label: "Projects Delivered" },
-  { value: "99.9%", label: "Uptime SLA" },
-  { value: "50ms", label: "Avg. Latency" },
-  { value: "4.9/5", label: "Client Rating" },
+  { value: 200, suffix: "+", label: "Projects Delivered", prefix: "" },
+  { value: 99.9, suffix: "%", label: "Uptime SLA", prefix: "" },
+  { value: 50, suffix: "ms", label: "Avg. Latency", prefix: "" },
+  { value: 4.9, suffix: "/5", label: "Client Rating", prefix: "" },
 ];
 
 const VENTURES = [
   {
     title: "Nexus Financial",
     description:
-      "Real-time trading execution engine processing 10k+ transactions per second with sub-millisecond latency and 99.999% reliability.",
+      "Real-time trading execution engine processing 10k+ transactions per second with sub-millisecond latency and 99.999% reliability. Built for institutional-grade trading at global scale.",
     tag: "Fintech",
     image: "/images/venture-nexus-financial.png",
     alt: "Nexus Financial — Real-time Trading Dashboard",
     offset: false,
+    metrics: [
+      { label: "Transactions/sec", value: "10K+" },
+      { label: "Latency", value: "<1ms" },
+    ],
   },
   {
     title: "AeroLogix",
     description:
-      "Predictive maintenance AI for aerospace logistics, reducing fleet downtime by 34% and saving $12M annually in operational costs.",
+      "Predictive maintenance AI for aerospace logistics, reducing fleet downtime by 34% and saving $12M annually in operational costs across 200+ aircraft.",
     tag: "AI/ML",
     image: "/images/venture-aerologix.png",
     alt: "AeroLogix — Predictive Maintenance AI",
     offset: true,
+    metrics: [
+      { label: "Downtime Reduction", value: "34%" },
+      { label: "Annual Savings", value: "$12M" },
+    ],
+  },
+  {
+    title: "Quantum Health",
+    description:
+      "HIPAA-compliant telehealth platform serving 2M+ patients with real-time video consultations, AI-powered diagnostics, and seamless EHR integration across 500+ providers.",
+    tag: "HealthTech",
+    image: "/images/venture-nexus-financial.png",
+    alt: "Quantum Health — Telehealth Platform",
+    offset: false,
+    metrics: [
+      { label: "Patients Served", value: "2M+" },
+      { label: "Providers", value: "500+" },
+    ],
+  },
+  {
+    title: "VaultChain",
+    description:
+      "Enterprise-grade blockchain custody solution managing $4B+ in digital assets with multi-signature security, real-time auditing, and regulatory compliance across 30 jurisdictions.",
+    tag: "Web3",
+    image: "/images/venture-aerologix.png",
+    alt: "VaultChain — Digital Asset Custody",
+    offset: true,
+    metrics: [
+      { label: "Assets Managed", value: "$4B+" },
+      { label: "Jurisdictions", value: "30+" },
+    ],
   },
 ];
 
@@ -47,29 +87,33 @@ const APPROACH_STEPS = [
     num: "01",
     title: "Discovery",
     description:
-      "Deep contextual analysis to understand business objectives, user needs, and technical constraints that shape the solution space.",
+      "Deep contextual analysis to understand business objectives, user needs, and technical constraints that shape the solution space. We conduct stakeholder interviews, competitive audits, and technical feasibility studies.",
     icon: "search",
+    details: ["Stakeholder Interviews", "Technical Audit", "Market Analysis", "Feasibility Study"],
   },
   {
     num: "02",
     title: "Architecture",
     description:
-      "Designing resilient system blueprints, data models, and interaction paradigms that serve as the foundation for scalable growth.",
+      "Designing resilient system blueprints, data models, and interaction paradigms that serve as the foundation for scalable growth. Our architects create living documentation that evolves with your product.",
     icon: "grid_view",
+    details: ["System Design", "Data Modeling", "API Contracts", "Security Blueprint"],
   },
   {
     num: "03",
     title: "Engineering",
     description:
-      "Precision-driven execution utilizing cutting-edge stacks, automated testing, and robust CI/CD pipelines that ensure quality at velocity.",
+      "Precision-driven execution utilizing cutting-edge stacks, automated testing, and robust CI/CD pipelines that ensure quality at velocity. Every line of code is reviewed, tested, and documented.",
     icon: "terminal",
+    details: ["Agile Sprints", "Code Review", "Automated Testing", "CI/CD Pipelines"],
   },
   {
     num: "04",
     title: "Evolution",
     description:
-      "Continuous monitoring, performance optimization, and strategic scaling post-deployment to ensure your product thrives in production.",
+      "Continuous monitoring, performance optimization, and strategic scaling post-deployment to ensure your product thrives in production. We provide 24/7 observability and proactive incident response.",
     icon: "trending_up",
+    details: ["Performance Monitoring", "Scaling Strategy", "Incident Response", "Continuous Optimization"],
   },
 ];
 
@@ -78,37 +122,51 @@ const TEAM_MEMBERS = [
     name: "Elena Vance",
     role: "Founder & CEO",
     description:
-      "Visionary leader with 15+ years in disruptive technology and product strategy. Former VP of Engineering at two unicorn startups.",
+      "Visionary leader with 15+ years in disruptive technology and product strategy. Former VP of Engineering at two unicorn startups, she drives StackOne's mission to engineer the extraordinary.",
     num: "01",
     image: "/images/team-elena-vance.png",
     alt: "Elena Vance — Founder & CEO",
+    skills: ["Product Strategy", "Team Building", "Fundraising"],
   },
   {
     name: "Marcus Chen",
     role: "Chief Technology Officer",
     description:
-      "Expert architect specializing in distributed systems and high-precision engineering. PhD in Computer Science from MIT.",
+      "Expert architect specializing in distributed systems and high-precision engineering. PhD in Computer Science from MIT with deep expertise in building systems that operate at massive scale.",
     num: "02",
     image: "/images/team-marcus-chen.png",
     alt: "Marcus Chen — Chief Technology Officer",
+    skills: ["Distributed Systems", "Cloud Architecture", "AI/ML"],
   },
   {
     name: "Sienna Rivers",
     role: "Design Director",
     description:
-      "Award-winning designer focused on human-centric interfaces and brand narratives. Former Design Lead at a Fortune 100 company.",
+      "Award-winning designer focused on human-centric interfaces and brand narratives. Former Design Lead at a Fortune 100 company, she brings an uncompromising eye for detail and craft.",
     num: "03",
     image: "/images/team-sienna-rivers.png",
     alt: "Sienna Rivers — Design Director",
+    skills: ["UX Design", "Brand Strategy", "Design Systems"],
   },
 ];
 
-const FOOTER_LINKS = [
-  "Privacy Policy",
-  "Terms of Service",
-  "Cookie Settings",
-  "Global Offices",
-  "Careers",
+const FOOTER_LINKS_COLUMNS = [
+  {
+    title: "Company",
+    links: ["About", "Careers", "Blog", "Press"],
+  },
+  {
+    title: "Services",
+    links: ["Product Strategy", "Development", "AI & ML", "Infrastructure"],
+  },
+  {
+    title: "Resources",
+    links: ["Case Studies", "Documentation", "Open Source", "Community"],
+  },
+  {
+    title: "Legal",
+    links: ["Privacy Policy", "Terms of Service", "Cookie Settings", "Security"],
+  },
 ];
 
 export default function Home() {
@@ -185,20 +243,24 @@ export default function Home() {
                 </span>
               </div>
 
-              {/* Main headline */}
-              <h1 className="text-[clamp(40px,8vw,80px)] leading-[1.05] tracking-[-0.04em] font-bold text-gradient-hero animate-slide-up-fade delay-100">
-                Engineering the
-                <br />
-                Extraordinary.
-              </h1>
+              {/* Main headline with text reveal */}
+              <div className="animate-slide-up-fade delay-100">
+                <h1 className="text-[clamp(40px,8vw,80px)] leading-[1.05] tracking-[-0.04em] font-bold text-gradient-hero">
+                  Engineering the
+                  <br />
+                  Extraordinary.
+                </h1>
+              </div>
 
               {/* Subtitle */}
-              <p className="text-lg md:text-xl text-on-surface-variant/70 max-w-2xl mx-auto animate-slide-up-fade delay-200 font-light leading-relaxed">
-                We build digital products for the world&apos;s most ambitious
-                brands. Transforming complex challenges into elegant,
-                high-performance solutions through precision engineering and
-                visionary design.
-              </p>
+              <div className="animate-slide-up-fade delay-200">
+                <p className="text-lg md:text-xl text-on-surface-variant/70 max-w-2xl mx-auto font-light leading-relaxed">
+                  We build digital products for the world&apos;s most ambitious
+                  brands. Transforming complex challenges into elegant,
+                  high-performance solutions through precision engineering and
+                  visionary design.
+                </p>
+              </div>
 
               {/* CTA buttons */}
               <div className="flex flex-col sm:flex-row items-center justify-center gap-4 pt-4 animate-slide-up-fade delay-300">
@@ -239,7 +301,12 @@ export default function Home() {
                     className={`text-center ${i < STATS.length - 1 ? "md:border-r md:border-white/[0.06]" : ""}`}
                   >
                     <div className="text-3xl md:text-4xl font-bold text-gradient-subtle tracking-tight mb-2">
-                      {stat.value}
+                      <AnimatedCounter
+                        target={stat.value}
+                        suffix={stat.suffix}
+                        prefix={stat.prefix}
+                        decimals={stat.value % 1 !== 0 ? 1 : 0}
+                      />
                     </div>
                     <div className="text-[11px] text-on-surface-variant/50 uppercase tracking-[0.15em] font-medium">
                       {stat.label}
@@ -250,6 +317,10 @@ export default function Home() {
             </div>
           </section>
         </ScrollReveal>
+        <div className="section-divider" />
+
+        {/* ====== TRUST MARQUEE ====== */}
+        <TrustMarquee />
         <div className="section-divider" />
 
         {/* ====== EXPERTISE SECTION ====== */}
@@ -275,29 +346,31 @@ export default function Home() {
                 </div>
                 <p className="text-base text-on-surface-variant/60 max-w-sm font-light leading-relaxed">
                   A curated selection of our most ambitious engineering and
-                  design challenges.
+                  design challenges — each pushing the boundaries of what&apos;s possible.
                 </p>
               </div>
             </ScrollReveal>
 
-            {/* Ventures grid */}
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-10">
+            {/* Ventures grid - 2x2 */}
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-10 md:gap-12">
               {VENTURES.map((venture, i) => (
                 <ScrollReveal
                   key={venture.title}
-                  delay={i * 120}
+                  delay={i * 100}
                   direction="up"
                   distance={40}
                 >
                   <div
-                    className={`group cursor-pointer ${venture.offset ? "md:mt-28" : ""}`}
+                    className={`group cursor-pointer ${venture.offset ? "md:mt-16" : ""}`}
                   >
                     <div className="venture-image-container aspect-[4/3] rounded-2xl overflow-hidden bg-surface-container-high relative mb-8 ring-1 ring-white/[0.04]">
-                      <img
-                        alt={venture.alt}
-                        className="w-full h-full object-cover grayscale opacity-60 group-hover:grayscale-0 group-hover:opacity-100 group-hover:scale-[1.03] transition-all duration-700 ease-out"
+                      <ParallaxImage
                         src={venture.image}
+                        alt={venture.alt}
+                        speed={0.08}
+                        className="w-full h-full"
                       />
+
                       {/* Overlay on hover */}
                       <div className="absolute inset-0 bg-gradient-to-t from-surface/80 via-transparent to-transparent z-10 opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
 
@@ -313,13 +386,26 @@ export default function Home() {
                     </div>
 
                     <div className="flex items-start justify-between gap-4">
-                      <div>
+                      <div className="flex-1">
                         <h3 className="text-2xl font-bold text-on-surface mb-3 group-hover:text-primary transition-colors duration-300 tracking-[-0.01em]">
                           {venture.title}
                         </h3>
-                        <p className="text-[15px] text-on-surface-variant/60 font-light leading-relaxed">
+                        <p className="text-[15px] text-on-surface-variant/60 font-light leading-relaxed mb-4">
                           {venture.description}
                         </p>
+                        {/* Metrics */}
+                        <div className="flex gap-6">
+                          {venture.metrics.map((metric) => (
+                            <div key={metric.label}>
+                              <div className="text-lg font-bold text-on-surface/80 tracking-tight">
+                                {metric.value}
+                              </div>
+                              <div className="text-[10px] text-on-surface-variant/40 uppercase tracking-[0.1em] font-medium">
+                                {metric.label}
+                              </div>
+                            </div>
+                          ))}
+                        </div>
                       </div>
                       <span className="shrink-0 uppercase tracking-[0.15em] text-[9px] text-on-surface-variant/40 border border-white/[0.06] px-3 py-1.5 rounded-md font-medium">
                         {venture.tag}
@@ -336,7 +422,18 @@ export default function Home() {
 
         {/* ====== APPROACH SECTION ====== */}
         <section className="py-24 md:py-36 px-6 md:px-20 relative" id="approach">
-          <div className="max-w-[1440px] mx-auto">
+          {/* Background decorative grid */}
+          <div className="absolute inset-0 pointer-events-none opacity-[0.02]">
+            <div
+              className="w-full h-full"
+              style={{
+                backgroundImage: `linear-gradient(rgba(139,159,255,0.3) 1px, transparent 1px), linear-gradient(90deg, rgba(139,159,255,0.3) 1px, transparent 1px)`,
+                backgroundSize: "60px 60px",
+              }}
+            />
+          </div>
+
+          <div className="max-w-[1440px] mx-auto relative z-10">
             {/* Section header */}
             <ScrollReveal>
               <div className="mb-24 flex flex-col md:flex-row md:items-end justify-between gap-6">
@@ -352,47 +449,74 @@ export default function Home() {
                 </div>
                 <p className="text-base text-on-surface-variant/60 max-w-sm font-light leading-relaxed">
                   A rigorous, multi-disciplinary methodology ensuring
-                  excellence from concept to deployment.
+                  excellence from concept to deployment — battle-tested across 200+ projects.
                 </p>
               </div>
             </ScrollReveal>
 
-            {/* Steps */}
-            <div className="grid grid-cols-1 md:grid-cols-4 gap-6 md:gap-4 relative">
-              {/* Timeline line */}
-              <div className="hidden md:block absolute top-[28px] left-[3%] w-[94%] h-[1px] bg-gradient-to-r from-primary/20 via-white/[0.06] to-primary/20" />
+            {/* Steps - Vertical timeline on mobile, horizontal on desktop */}
+            <div className="relative">
+              {/* Timeline vertical line (mobile) */}
+              <div className="md:hidden absolute left-4 top-0 bottom-0 w-[1px] bg-gradient-to-b from-primary/30 via-white/[0.06] to-primary/30" />
 
-              {APPROACH_STEPS.map((step, i) => (
-                <ScrollReveal key={step.num} delay={i * 100} direction="up" distance={30}>
-                  <div className="relative pt-8 md:pt-14 group">
-                    {/* Timeline dot */}
-                    <div
-                      className={`hidden md:flex absolute top-0 left-0 w-7 h-7 rounded-full items-center justify-center z-10 -mt-[3px] transition-all duration-500 ${
-                        i === 0
-                          ? "bg-primary/20 border-2 border-primary"
-                          : "bg-surface border-2 border-white/10 group-hover:border-primary/50 group-hover:bg-primary/10"
-                      }`}
-                    >
-                      <span className="material-symbols-outlined text-[12px] text-primary">
-                        {step.icon}
-                      </span>
-                    </div>
+              {/* Timeline horizontal line (desktop) */}
+              <div className="hidden md:block absolute top-[40px] left-[3%] w-[94%] h-[1px] bg-gradient-to-r from-primary/20 via-white/[0.06] to-primary/20" />
 
-                    <div className="text-[40px] font-light text-white/[0.04] mb-2 group-hover:text-primary/20 transition-colors duration-500">
-                      {step.num}
+              <div className="grid grid-cols-1 md:grid-cols-4 gap-8 md:gap-6 relative">
+                {APPROACH_STEPS.map((step, i) => (
+                  <ScrollReveal key={step.num} delay={i * 100} direction="up" distance={30}>
+                    <div className="approach-step relative pl-12 md:pl-0 md:pt-16 group rounded-xl p-4 md:p-6 -m-4 md:-m-6">
+                      {/* Timeline dot */}
+                      <div
+                        className={`absolute left-0 md:absolute md:top-0 md:left-0 w-8 h-8 rounded-full flex items-center justify-center z-10 transition-all duration-500 ${
+                          i === 0
+                            ? "bg-primary/20 border-2 border-primary shadow-[0_0_15px_rgba(59,107,255,0.3)]"
+                            : "bg-surface border-2 border-white/10 group-hover:border-primary/50 group-hover:bg-primary/10 group-hover:shadow-[0_0_15px_rgba(59,107,255,0.15)]"
+                        }`}
+                      >
+                        <span className="material-symbols-outlined text-[12px] text-primary">
+                          {step.icon}
+                        </span>
+                      </div>
+
+                      <div className="text-[48px] font-light text-white/[0.03] mb-2 group-hover:text-primary/15 transition-colors duration-500 leading-none">
+                        {step.num}
+                      </div>
+                      <h3 className="text-lg font-semibold text-on-surface mb-3 tracking-[-0.01em] group-hover:text-primary transition-colors duration-300">
+                        {step.title}
+                      </h3>
+                      <p className="text-sm text-on-surface-variant/50 font-light leading-relaxed mb-5">
+                        {step.description}
+                      </p>
+
+                      {/* Detail tags */}
+                      <div className="flex flex-wrap gap-2">
+                        {step.details.map((detail) => (
+                          <span
+                            key={detail}
+                            className="inline-flex items-center px-2.5 py-1 rounded text-[9px] uppercase tracking-[0.1em] font-medium bg-white/[0.02] border border-white/[0.04] text-on-surface-variant/40 group-hover:text-on-surface-variant/60 group-hover:border-white/[0.08] transition-all duration-500"
+                          >
+                            {detail}
+                          </span>
+                        ))}
+                      </div>
                     </div>
-                    <h3 className="text-lg font-semibold text-on-surface mb-3 tracking-[-0.01em]">
-                      {step.title}
-                    </h3>
-                    <p className="text-sm text-on-surface-variant/50 font-light leading-relaxed">
-                      {step.description}
-                    </p>
-                  </div>
-                </ScrollReveal>
-              ))}
+                  </ScrollReveal>
+                ))}
+              </div>
             </div>
           </div>
         </section>
+
+        <div className="section-divider" />
+
+        {/* ====== TECH STACK SECTION ====== */}
+        <TechStack />
+
+        <div className="section-divider" />
+
+        {/* ====== TESTIMONIALS SECTION ====== */}
+        <Testimonials />
 
         <div className="section-divider" />
 
@@ -418,6 +542,10 @@ export default function Home() {
                     <span className="text-gradient-subtle">the Extraordinary</span>
                   </h2>
                 </div>
+                <p className="text-base text-on-surface-variant/60 max-w-sm font-light leading-relaxed">
+                  A world-class team of engineers, designers, and strategists
+                  united by a shared obsession with excellence.
+                </p>
               </div>
             </ScrollReveal>
 
@@ -425,14 +553,32 @@ export default function Home() {
             <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
               {TEAM_MEMBERS.map((member, i) => (
                 <ScrollReveal key={member.name} delay={i * 100} direction="up" distance={40}>
-                  <div className="group relative cursor-pointer">
+                  <div className="team-card-3d group relative cursor-pointer">
                     {/* Portrait */}
-                    <div className="aspect-[4/5] overflow-hidden rounded-2xl mb-8 ring-1 ring-white/[0.04] grayscale opacity-70 group-hover:grayscale-0 group-hover:opacity-100 group-hover:ring-primary/20 transition-all duration-700 shadow-2xl shadow-black/20">
-                      <img
-                        alt={member.alt}
-                        className="w-full h-full object-cover transition-transform duration-[1200ms] group-hover:scale-[1.03]"
+                    <div className="aspect-[4/5] overflow-hidden rounded-2xl mb-8 ring-1 ring-white/[0.04] grayscale opacity-70 group-hover:grayscale-0 group-hover:opacity-100 group-hover:ring-primary/20 transition-all duration-700 shadow-2xl shadow-black/20 relative">
+                      <ParallaxImage
                         src={member.image}
+                        alt={member.alt}
+                        speed={0.06}
+                        className="w-full h-full"
                       />
+
+                      {/* Hover overlay */}
+                      <div className="absolute inset-0 bg-gradient-to-t from-surface/60 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500 z-10" />
+
+                      {/* Hover social links */}
+                      <div className="absolute bottom-4 left-4 right-4 z-20 flex gap-2 transform translate-y-4 opacity-0 group-hover:translate-y-0 group-hover:opacity-100 transition-all duration-500">
+                        {["linkedin", "twitter", "mail"].map((social) => (
+                          <div
+                            key={social}
+                            className="w-9 h-9 rounded-lg bg-white/[0.08] backdrop-blur-xl border border-white/[0.1] flex items-center justify-center hover:bg-white/[0.15] transition-colors duration-300"
+                          >
+                            <span className="material-symbols-outlined text-[14px] text-white/70">
+                              {social === "linkedin" ? "work" : social === "twitter" ? "close" : "mail"}
+                            </span>
+                          </div>
+                        ))}
+                      </div>
                     </div>
 
                     {/* Info */}
@@ -451,6 +597,18 @@ export default function Home() {
                       <p className="text-sm text-on-surface-variant/50 font-light leading-relaxed pt-1">
                         {member.description}
                       </p>
+
+                      {/* Skill tags */}
+                      <div className="flex flex-wrap gap-2 pt-2">
+                        {member.skills.map((skill) => (
+                          <span
+                            key={skill}
+                            className="inline-flex items-center px-2.5 py-1 rounded text-[9px] uppercase tracking-[0.1em] font-medium bg-primary/[0.06] border border-primary/[0.08] text-primary/60 group-hover:text-primary/80 group-hover:border-primary/[0.15] transition-all duration-500"
+                          >
+                            {skill}
+                          </span>
+                        ))}
+                      </div>
                     </div>
                   </div>
                 </ScrollReveal>
@@ -473,15 +631,31 @@ export default function Home() {
                 <div className="absolute -top-20 -left-20 w-60 h-60 bg-primary/5 rounded-full blur-[80px] animate-float-glow pointer-events-none" />
                 <div className="absolute -bottom-20 -right-20 w-60 h-60 bg-primary/3 rounded-full blur-[80px] animate-float-glow pointer-events-none" style={{ animationDelay: "3s" }} />
 
+                {/* Decorative rotating ring */}
+                <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[500px] h-[500px] md:w-[700px] md:h-[700px] animate-rotate-slow pointer-events-none opacity-[0.03]">
+                  <div
+                    className="w-full h-full rounded-full border border-dashed border-primary/50"
+                  />
+                </div>
+
                 <div className="relative z-10">
-                  <h2 className="text-[clamp(32px,6vw,64px)] tracking-[-0.04em] text-on-surface mb-6 font-bold leading-[1.1]">
-                    Let&apos;s build the
-                    <br />
-                    <span className="text-shimmer">future.</span>
-                  </h2>
+                  {/* Small label */}
+                  <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full border border-white/[0.06] bg-white/[0.02] mb-8">
+                    <span className="relative flex h-1.5 w-1.5">
+                      <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-green-400 opacity-75" />
+                      <span className="relative inline-flex rounded-full h-1.5 w-1.5 bg-green-400" />
+                    </span>
+                    <span className="text-[9px] uppercase tracking-[0.2em] text-on-surface-variant/50 font-medium">
+                      Available for new projects
+                    </span>
+                  </div>
+
+                  <TextReveal className="text-[clamp(32px,6vw,64px)] tracking-[-0.04em] text-on-surface mb-6 font-bold leading-[1.1]">
+                    Let&apos;s build the future.
+                  </TextReveal>
                   <p className="text-lg md:text-xl text-on-surface-variant/60 max-w-xl mx-auto mb-12 font-light leading-relaxed">
                     Partner with StackOne to engineer your next extraordinary
-                    digital product.
+                    digital product. From concept to scale, we deliver excellence.
                   </p>
                   <a
                     className="relative z-10 inline-flex items-center justify-center btn-primary text-white px-14 py-5 rounded-xl hover:scale-[1.02] transition-all duration-400 uppercase tracking-[0.2em] text-[12px] font-bold shadow-xl shadow-primary/20"
@@ -503,34 +677,84 @@ export default function Home() {
 
       {/* ====== FOOTER ====== */}
       <footer className="bg-surface-container-lowest border-t border-white/[0.04] w-full relative z-10">
-        <div className="grid grid-cols-1 md:grid-cols-4 gap-8 px-6 md:px-20 py-16 w-full max-w-[1440px] mx-auto">
-          <div className="md:col-span-1">
-            <div className="text-xl font-bold text-on-surface mb-4 tracking-[-0.02em] flex items-center gap-2">
-              <div className="w-7 h-7 rounded-md overflow-hidden bg-primary-container/20 ring-1 ring-white/10">
-                <img
-                  alt="StackOne"
-                  className="w-full h-full object-cover"
-                  src="/images/stackone-logo.png"
-                />
+        <div className="max-w-[1440px] mx-auto px-6 md:px-20">
+          {/* Main footer content */}
+          <div className="grid grid-cols-2 md:grid-cols-6 gap-8 py-16">
+            {/* Brand column */}
+            <div className="col-span-2">
+              <div className="text-xl font-bold text-on-surface mb-4 tracking-[-0.02em] flex items-center gap-2">
+                <div className="w-7 h-7 rounded-md overflow-hidden bg-primary-container/20 ring-1 ring-white/10">
+                  <img
+                    alt="StackOne"
+                    className="w-full h-full object-cover"
+                    src="/images/stackone-logo.png"
+                  />
+                </div>
+                StackOne
               </div>
-              StackOne
+              <p className="text-sm text-on-surface-variant/40 font-light leading-relaxed max-w-xs mb-6">
+                Engineering the extraordinary. We build digital products for the
+                world&apos;s most ambitious brands.
+              </p>
+              <div className="flex gap-3">
+                {[
+                  { icon: "work", label: "LinkedIn" },
+                  { icon: "close", label: "Twitter" },
+                  { icon: "code", label: "GitHub" },
+                  { icon: "mail", label: "Email" },
+                ].map((social) => (
+                  <a
+                    key={social.label}
+                    href="#"
+                    className="w-9 h-9 rounded-lg bg-white/[0.03] border border-white/[0.06] flex items-center justify-center hover:bg-white/[0.08] hover:border-white/[0.12] transition-all duration-300 group/social"
+                    aria-label={social.label}
+                  >
+                    <span className="material-symbols-outlined text-[14px] text-on-surface-variant/40 group-hover/social:text-primary transition-colors duration-300">
+                      {social.icon}
+                    </span>
+                  </a>
+                ))}
+              </div>
             </div>
-            <p className="text-[10px] text-on-surface-variant/30 uppercase tracking-[0.15em] leading-relaxed font-medium">
-              © 2024 StackOne Architectural
-              <br />
-              Systems. All rights reserved.
-            </p>
-          </div>
-          <div className="md:col-span-3 flex flex-wrap gap-6 justify-start md:justify-end items-start pt-2 md:pt-4">
-            {FOOTER_LINKS.map((link) => (
-              <a
-                key={link}
-                className="uppercase tracking-[0.15em] text-[10px] text-on-surface-variant/40 hover:text-primary transition-colors duration-300 font-medium"
-                href="#"
-              >
-                {link}
-              </a>
+
+            {/* Link columns */}
+            {FOOTER_LINKS_COLUMNS.map((column) => (
+              <div key={column.title}>
+                <h4 className="text-[11px] uppercase tracking-[0.15em] text-on-surface-variant/30 font-semibold mb-4">
+                  {column.title}
+                </h4>
+                <ul className="space-y-2.5">
+                  {column.links.map((link) => (
+                    <li key={link}>
+                      <a
+                        className="text-[13px] text-on-surface-variant/50 hover:text-on-surface-variant/80 transition-colors duration-300 font-light"
+                        href="#"
+                      >
+                        {link}
+                      </a>
+                    </li>
+                  ))}
+                </ul>
+              </div>
             ))}
+          </div>
+
+          {/* Bottom bar */}
+          <div className="border-t border-white/[0.04] py-6 flex flex-col md:flex-row items-center justify-between gap-4">
+            <p className="text-[10px] text-on-surface-variant/25 uppercase tracking-[0.1em] font-medium">
+              &copy; 2024 StackOne Architectural Systems. All rights reserved.
+            </p>
+            <div className="flex items-center gap-6">
+              {["Privacy", "Terms", "Cookies", "Security"].map((link) => (
+                <a
+                  key={link}
+                  className="text-[10px] text-on-surface-variant/25 hover:text-on-surface-variant/50 uppercase tracking-[0.1em] font-medium transition-colors duration-300"
+                  href="#"
+                >
+                  {link}
+                </a>
+              ))}
+            </div>
           </div>
         </div>
       </footer>

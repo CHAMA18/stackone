@@ -282,6 +282,120 @@
 .delay-600 { animation-delay: 900ms; }
 
 /* ========================================
+   MARQUEE / INFINITE SCROLL
+   ======================================== */
+@keyframes marquee {
+  0% {
+    transform: translate3d(0, 0, 0);
+  }
+  100% {
+    transform: translate3d(-50%, 0, 0);
+  }
+}
+
+@keyframes marquee-reverse {
+  0% {
+    transform: translate3d(-50%, 0, 0);
+  }
+  100% {
+    transform: translate3d(0, 0, 0);
+  }
+}
+
+.animate-marquee {
+  animation: marquee 40s linear infinite;
+}
+
+.animate-marquee-reverse {
+  animation: marquee-reverse 40s linear infinite;
+}
+
+.animate-marquee:hover,
+.animate-marquee-reverse:hover {
+  animation-play-state: paused;
+}
+
+/* ========================================
+   TEXT REVEAL LINE ANIMATION
+   ======================================== */
+@keyframes revealLine {
+  from {
+    transform: scaleX(0);
+  }
+  to {
+    transform: scaleX(1);
+  }
+}
+
+.animate-reveal-line {
+  animation: revealLine 1s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+  transform-origin: left;
+}
+
+/* ========================================
+   COUNTER ANIMATION
+   ======================================== */
+@keyframes countPulse {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0.7; }
+}
+
+/* ========================================
+   GRID PULSE
+   ======================================== */
+@keyframes gridPulse {
+  0%, 100% { opacity: 0.03; }
+  50% { opacity: 0.08; }
+}
+
+/* ========================================
+   FLOAT BADGE
+   ======================================== */
+@keyframes floatBadge {
+  0%, 100% {
+    transform: translateY(0) rotate(0deg);
+  }
+  25% {
+    transform: translateY(-6px) rotate(1deg);
+  }
+  75% {
+    transform: translateY(4px) rotate(-1deg);
+  }
+}
+
+.animate-float-badge {
+  animation: floatBadge 6s ease-in-out infinite;
+}
+
+/* ========================================
+   GLOW PULSE
+   ======================================== */
+@keyframes glowPulse {
+  0%, 100% {
+    box-shadow: 0 0 20px rgba(59, 107, 255, 0.1);
+  }
+  50% {
+    box-shadow: 0 0 40px rgba(59, 107, 255, 0.25);
+  }
+}
+
+.animate-glow-pulse {
+  animation: glowPulse 4s ease-in-out infinite;
+}
+
+/* ========================================
+   ROTATE SLOW
+   ======================================== */
+@keyframes rotateSlow {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(360deg); }
+}
+
+.animate-rotate-slow {
+  animation: rotateSlow 60s linear infinite;
+}
+
+/* ========================================
    SECTION DIVIDER
    ======================================== */
 .section-divider {
@@ -482,6 +596,79 @@
 }
 
 /* ========================================
+   TECH STACK CARD HOVER
+   ======================================== */
+.tech-card {
+  transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+  position: relative;
+  overflow: hidden;
+}
+
+.tech-card::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(circle at var(--hover-x, 50%) var(--hover-y, 50%), rgba(59, 107, 255, 0.08) 0%, transparent 60%);
+  opacity: 0;
+  transition: opacity 0.4s ease;
+}
+
+.tech-card:hover::before {
+  opacity: 1;
+}
+
+.tech-card:hover {
+  transform: translateY(-2px);
+  border-color: rgba(139, 159, 255, 0.15);
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
+}
+
+/* ========================================
+   TESTIMONIAL CARD
+   ======================================== */
+.testimonial-card {
+  transition: all 0.5s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.testimonial-card:hover {
+  transform: translateY(-4px);
+  border-color: rgba(139, 159, 255, 0.1);
+  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3), 0 0 40px rgba(59, 107, 255, 0.03);
+}
+
+/* ========================================
+   APPROACH TIMELINE
+   ======================================== */
+.approach-step {
+  transition: all 0.5s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.approach-step:hover {
+  background: rgba(255, 255, 255, 0.03);
+}
+
+/* ========================================
+   TEAM CARD 3D TILT
+   ======================================== */
+.team-card-3d {
+  transition: transform 0.6s cubic-bezier(0.16, 1, 0.3, 1);
+  transform-style: preserve-3d;
+  perspective: 1000px;
+}
+
+.team-card-3d:hover {
+  transform: translateY(-8px);
+}
+
+/* ========================================
+   GRADIENT BORDER ANIMATION
+   ======================================== */
+@keyframes borderRotate {
+  0% { --angle: 0deg; }
+  100% { --angle: 360deg; }
+}
+
+/* ========================================
    ACCESSIBILITY: REDUCED MOTION
    ======================================== */
 @media (prefers-reduced-motion: reduce) {
@@ -496,7 +683,12 @@
   .animate-float-glow,
   .animate-orb-1,
   .animate-orb-2,
-  .animate-pulse-ring {
+  .animate-pulse-ring,
+  .animate-marquee,
+  .animate-marquee-reverse,
+  .animate-float-badge,
+  .animate-glow-pulse,
+  .animate-rotate-slow {
     animation: none !important;
   }
   .text-shimmer {
