@@ -131,13 +131,13 @@ const TEAM_MEMBERS = [
     skills: ["Product Strategy", "Team Building", "Fundraising"],
   },
   {
-    name: "Marcus Chen",
-    role: "Chief Technology Officer",
+    name: "Clivate Maiba",
+    role: "Co-Founder/Director",
     description:
       "Expert architect specializing in distributed systems and high-precision engineering. PhD in Computer Science from MIT with deep expertise in building systems that operate at massive scale.",
     num: "02",
     image: "/images/team-marcus-chen.png",
-    alt: "Marcus Chen — Chief Technology Officer",
+    alt: "Clivate Maiba — Co-Founder/Director",
     skills: ["Distributed Systems", "Cloud Architecture", "AI/ML"],
   },
   {
