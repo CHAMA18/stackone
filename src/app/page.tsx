@@ -120,12 +120,12 @@ const APPROACH_STEPS = [
 const TEAM_MEMBERS = [
   {
     name: "Elena Vance",
-    role: "Founder & CEO",
+    role: "Founder & Managing Director",
     description:
       "Visionary leader with 15+ years in disruptive technology and product strategy. Former VP of Engineering at two unicorn startups, she drives StackOne's mission to engineer the extraordinary.",
     num: "01",
     image: "/images/team-elena-vance.png",
-    alt: "Elena Vance — Founder & CEO",
+    alt: "Elena Vance — Founder & Managing Director",
     skills: ["Product Strategy", "Team Building", "Fundraising"],
   },
   {
