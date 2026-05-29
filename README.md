@@ -18,7 +18,7 @@ A world-class, dark premium landing page for StackOne — a software agency buil
 | Fonts | Satoshi (fontshare), JetBrains Mono (Google Fonts) |
 | Icons | Material Symbols Outlined |
 | Build | Bun runtime |
-| Output | Standalone (Docker-ready) |
+| Output | Static HTML (easy deployment anywhere) |
 
 ---
 
@@ -114,203 +114,71 @@ Open [http://localhost:3000](http://localhost:3000) in your browser.
 
 ```bash
 npm run build
-npm run start
-# or
-bun run build
-bun run start
+# Static files output to: out/
 ```
 
 ---
 
 ## Deployment
 
-This project uses Next.js `output: "standalone"` which produces an optimized, self-contained build perfect for containerized and serverless deployments.
+This project exports as **static HTML** (`out/` directory). Deploy it anywhere that serves static files — no Node.js server needed.
+
+**Publish Directory:** `out`
 
 ---
 
-### Deploy on Vercel (Recommended)
+### Deploy on Render
+
+1. Go to [render.com](https://render.com) → **New** → **Static Site**
+2. Connect your GitHub repo `CHAMA18/stackone`
+3. Set:
+   - **Build Command:** `npm install && npm run build`
+   - **Publish Directory:** `out`
+4. Click **Create Static Site**
+
+Your site will be live at `https://stackone-xxxx.onrender.com`
+
+---
+
+### Deploy on Vercel
 
 Vercel is the official platform from the creators of Next.js and offers zero-config deployment.
 
-1. **Push your code** to GitHub (already done at `https://github.com/CHAMA18/stackone`)
+1. **Go to [vercel.com](https://vercel.com)** and sign in with GitHub
+2. **Click "Add New Project"** and select the `stackone` repository
+3. **Framework Preset:** Next.js (auto-detected)
+4. **Click "Deploy"** — Vercel handles the rest
+5. Your site will be live at `https://stackone-<hash>.vercel.app`
 
-2. **Go to [vercel.com](https://vercel.com)** and sign in with GitHub
-
-3. **Click "Add New Project"** and select the `stackone` repository
-
-4. **Configure settings:**
-   - **Framework Preset:** Next.js (auto-detected)
-   - **Build Command:** `npm run build` (or `bun run build`)
-   - **Output Directory:** `.next` (auto-detected)
-   - **Install Command:** `npm install` (or `bun install`)
-
-5. **Click "Deploy"** — Vercel handles the rest
-
-6. Your site will be live at `https://stackone-<hash>.vercel.app`
-
-> **Custom Domain:** In Vercel dashboard → Settings → Domains → Add your custom domain (e.g., `stackone.africa`)
-
----
-
-### Deploy with Docker
-
-The standalone output is Docker-ready out of the box.
-
-1. **Build the Docker image:**
-
-```bash
-# Build the Next.js standalone output
-npm run build
-
-# Create a Dockerfile
-cat > Dockerfile << 'EOF'
-FROM node:18-alpine AS runner
-WORKDIR /app
-
-ENV NODE_ENV=production
-ENV NEXT_TELEMETRY_DISABLED=1
-
-RUN addgroup --system --gid 1001 nodejs
-RUN adduser --system --uid 1001 nextjs
-
-COPY --from=builder /app/.next/standalone ./
-COPY --from=builder /app/.next/static ./.next/static
-COPY --from=builder /app/public ./public
-
-USER nextjs
-
-EXPOSE 3000
-ENV PORT=3000
-ENV HOSTNAME="0.0.0.0"
-
-CMD ["node", "server.js"]
-EOF
-```
-
-2. **Build and run:**
-
-```bash
-# Multi-stage build (build inside Docker)
-cat > Dockerfile << 'EOF'
-FROM node:18-alpine AS builder
-WORKDIR /app
-COPY package.json package-lock.json* ./
-RUN npm install
-COPY . .
-RUN npm run build
-
-FROM node:18-alpine AS runner
-WORKDIR /app
-ENV NODE_ENV=production
-ENV NEXT_TELEMETRY_DISABLED=1
-
-RUN addgroup --system --gid 1001 nodejs
-RUN adduser --system --uid 1001 nextjs
-
-COPY --from=builder /app/.next/standalone ./
-COPY --from=builder /app/.next/static ./.next/static
-COPY --from=builder /app/public ./public
-
-USER nextjs
-EXPOSE 3000
-ENV PORT=3000
-ENV HOSTNAME="0.0.0.0"
-
-CMD ["node", "server.js"]
-EOF
-
-docker build -t stackone .
-docker run -p 3000:3000 stackone
-```
-
-3. **Deploy to any cloud provider:**
-   - **AWS ECS/Fargate** — Push image to ECR, create task definition
-   - **Google Cloud Run** — `gcloud run deploy --source .`
-   - **Azure Container Apps** — Push to ACR, deploy container app
-   - **DigitalOcean App Platform** — Connect repo or push image
+> **Custom Domain:** In Vercel dashboard → Settings → Domains → Add your custom domain
 
 ---
 
 ### Deploy on Netlify
 
-1. **Install the Next.js adapter:**
-
-```bash
-npm install -D @netlify/plugin-nextjs
-```
-
-2. **Create `netlify.toml`:**
-
-```toml
-[build]
-  command = "npm run build"
-  publish = ".next"
-
-[[plugins]]
-  package = "@netlify/plugin-nextjs"
-```
-
-3. **Deploy:**
-   - Go to [app.netlify.com](https://app.netlify.com)
-   - Click "Add new site" → "Import an existing project"
-   - Select the `stackone` GitHub repo
-   - Netlify auto-detects Next.js — click "Deploy"
+1. Go to [app.netlify.com](https://app.netlify.com) → "Add new site" → "Import an existing project"
+2. Select the `stackone` GitHub repo
+3. Set:
+   - **Build Command:** `npm run build`
+   - **Publish Directory:** `out`
+4. Click "Deploy"
 
 ---
 
-### Deploy on Railway
+### Deploy on Cloudflare Pages
 
-1. Go to [railway.app](https://railway.app) and sign in with GitHub
-2. Click "New Project" → "Deploy from GitHub repo"
-3. Select the `stackone` repository
-4. Railway auto-detects Next.js and deploys
-5. Your site is live at `https://stackone-production.up.railway.app`
-
-> **Custom Domain:** Settings → Domains → Add domain
-
----
-
-### Deploy as a Static Export (Optional)
-
-If you want a fully static site (no server), modify `next.config.ts`:
-
-```typescript
-const nextConfig: NextConfig = {
-  output: "export",  // Change from "standalone" to "export"
-  images: {
-    unoptimized: true,  // Required for static export with images
-  },
-};
-```
-
-Then build and deploy the `out/` directory to any static host:
-
-```bash
-npm run build
-# Deploy the "out" folder to:
-# - GitHub Pages
-# - Cloudflare Pages
-# - Amazon S3 + CloudFront
-# - Firebase Hosting
-```
+1. Go to [dash.cloudflare.com](https://dash.cloudflare.com) → Pages → Create a project
+2. Connect GitHub → Select `stackone`
+3. Set:
+   - **Build Command:** `npm run build`
+   - **Build output directory:** `out`
+4. Click "Save and Deploy"
 
 ---
 
 ### Deploy on GitHub Pages
 
-1. Update `next.config.ts` for static export (see above)
-
-2. Add `next.config.ts` base path if needed:
-
-```typescript
-const nextConfig: NextConfig = {
-  output: "export",
-  basePath: "/stackone",  // Your repo name
-  images: { unoptimized: true },
-};
-```
-
-3. Create `.github/workflows/deploy.yml`:
+1. Create `.github/workflows/deploy.yml`:
 
 ```yaml
 name: Deploy to GitHub Pages
@@ -341,7 +209,16 @@ jobs:
       - uses: actions/deploy-pages@v4
 ```
 
-4. Go to repo Settings → Pages → Source: GitHub Actions
+2. Go to repo Settings → Pages → Source: GitHub Actions
+
+---
+
+### Deploy Anywhere (FTP, S3, Firebase, etc.)
+
+```bash
+npm install && npm run build
+# Upload the "out/" folder to any static host
+```
 
 ---
 

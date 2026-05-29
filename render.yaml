@@ -1,14 +1,6 @@
 services:
   - type: web
     name: stackone
-    runtime: node
-    plan: free
+    runtime: static
     buildCommand: npm install && npm run build
-    startCommand: npm run start
-    envVars:
-      - key: NODE_ENV
-        value: production
-      - key: PORT
-        value: 10000
-      - key: HOSTNAME
-        value: 0.0.0.0
+    staticPublishPath: out
