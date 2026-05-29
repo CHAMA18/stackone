@@ -1,6 +1,5 @@
 services:
-  - type: web
+  - type: static
     name: stackone
-    runtime: static
     buildCommand: npm install && npm run build
     staticPublishPath: out
