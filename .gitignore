@@ -52,3 +52,29 @@ prompt
 server.log
 # Skills directory
 /skills/
+
+# Z-AI internal files
+.zscripts/
+.z-ai-config/
+agent-ctx/
+
+# Database
+db/
+
+# Download directory (generated files)
+download/
+
+# Upload directory
+upload/
+
+# Mini services
+mini-services/
+
+# Examples
+examples/
+
+# Caddy
+Caddyfile
+
+# Worklog
+worklog.md
