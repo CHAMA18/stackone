@@ -128,3 +128,23 @@ Stage Summary:
 - Reply-To is set to original sender's email
 - Recipient-specific routing implemented
 - chungu@thestackone.com forwards ONLY to chungu424@gmail.com
+
+---
+Task ID: 8
+Agent: Main Agent
+Task: Fix email sender attribution - forwarded emails should show original sender
+
+Work Log:
+- User complained forwarded emails showed "Chungu Chama via thestackone.com" instead of the original sender
+- First attempted using SendRawEmail with original From header - rejected by SES (unverified address)
+- SES requires From address to be a verified identity
+- Solution: Format display name as "Original Sender Name [original@email.com]" with verified From address
+- Reply-To is set to the original sender's email so replies go to them directly
+- Example: "Facebook Friend Suggestions [friendsuggestion@facebookmail.com]" <chungu@thestackone.com>
+- Deployed and tested successfully
+
+Stage Summary:
+- Forwarded emails now show original sender name and email in the display name
+- Reply-To goes to original sender
+- From address uses the verified @thestackone.com address (SES requirement)
+- Format: "Sender Name [sender@email.com]" <recipient@thestackone.com>
