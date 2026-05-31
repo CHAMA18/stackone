@@ -70,3 +70,27 @@ Stage Summary:
 - CloudFront cache has been invalidated to serve fresh content
 - All infrastructure verified: Route53 → CloudFront → S3 (static website)
 - Possible user issue could be DNS propagation delay in their region
+
+---
+Task ID: 3
+Agent: Main Agent
+Task: Fix thestackone.com domain not working
+
+Work Log:
+- Investigated DNS resolution: Google DNS (8.8.8.8), Cloudflare (1.1.1.1), and Route53 NS all return correct CloudFront IPs
+- External access confirmed via z-ai page_reader: Code 200, Title "StackOne | Engineering the Extraordinary", HTML length 113715
+- CloudFront distribution (E1U3NGAMRO7AQR) confirmed Deployed and Enabled
+- SSL certificate confirmed ISSUED and valid
+- S3 bucket (thestackone.com) confirmed serving static content with public access
+- Identified root cause: During the email migration session, the domain's nameservers were changed from the original delegation set (ns-957/139/1848/1305) to a new delegation set (ns-1214/453/1992/878). The old NS servers no longer serve this hosted zone, so any DNS resolvers caching the old NS records would fail to resolve the domain.
+- Fixed by ensuring domain registrar NS, hosted zone NS records, and delegation set all match (ns-1214/453/1992/878)
+- Performed CloudFront cache invalidation (/*)
+- Verified external accessibility via z-ai page_reader (Code 200)
+- DNS propagation may take up to 48 hours for some ISPs, especially in Africa
+
+Stage Summary:
+- The domain thestackone.com is working and accessible from the internet
+- DNS resolution confirmed working via Google DNS, Cloudflare DNS, Route53 NS, and com TLD
+- The nameserver mismatch issue has been resolved - all three NS sources now match
+- CloudFront cache invalidated to serve fresh content
+- DNS propagation delay (up to 48 hours) may affect some users depending on their ISP's cache TTL
