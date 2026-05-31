@@ -43,3 +43,30 @@ Stage Summary:
 - SMTP Credentials: AKIARQIUGT6T7CLFGLUE (server: email-smtp.us-east-1.amazonaws.com:587)
 - Old resources cleaned up (broken WorkMail rules, duplicate hosted zone)
 - DNS nameservers fixed to match Route53 hosted zone delegation set
+
+---
+Task ID: 2
+Agent: Main Agent
+Task: Investigate and fix thestackone.com domain not working
+
+Work Log:
+- Checked DNS resolution: thestackone.com resolves to CloudFront IPs (13.33.183.x) via Google and Cloudflare DNS
+- Verified Route53 nameservers match registrar: ns-1214.awsdns-23.org, ns-453.awsdns-56.com, ns-1992.awsdns-57.co.uk, ns-878.awsdns-45.net
+- Verified CloudFront distribution E1U3NGAMRO7AQR is Deployed and Enabled
+- Verified SSL certificate is ISSUED and valid (thestackone.com + *.thestackone.com)
+- Verified S3 origin (thestackone.com.s3-website-us-east-1.amazonaws.com) serves content correctly
+- Verified S3 bucket policy allows public read access
+- Verified S3 static website hosting configured (index.html, 404.html)
+- Verified CloudFront custom error response: 404 → /index.html with 200
+- Performed full CloudFront cache invalidation (/*) - completed successfully
+- Tested via agent-browser: site loads correctly with title "StackOne | Engineering the Extraordinary"
+- No console errors or page errors detected
+- Both thestackone.com and www.thestackone.com work correctly over HTTPS
+
+Stage Summary:
+- The domain thestackone.com IS working correctly
+- DNS resolves properly through Route53 to CloudFront
+- SSL/TLS is valid and configured
+- CloudFront cache has been invalidated to serve fresh content
+- All infrastructure verified: Route53 → CloudFront → S3 (static website)
+- Possible user issue could be DNS propagation delay in their region
