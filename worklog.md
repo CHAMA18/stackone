@@ -100,3 +100,31 @@ Stage Summary:
 - Fix: Rewrote Lambda using @aws-sdk/client-s3, @aws-sdk/client-ses (v3) + mailparser
 - All missed emails reprocessed and delivered
 - Email receiving and forwarding is now fully operational
+
+---
+Task ID: 7
+Agent: Main Agent
+Task: Fix email sender attribution and recipient-specific forwarding
+
+Work Log:
+- User reported two issues:
+  1. Forwarded emails showed as from "noreply@thestackone.com" instead of original sender
+  2. chungu@thestackone.com was forwarding to both Gmail addresses instead of just chungu424@gmail.com
+- Updated Lambda function to:
+  - Preserve original sender name: "Original Sender Name via thestackone.com" <chungu@thestackone.com>
+  - Set Reply-To to the original sender's email address
+  - Keep original subject line (no "Fwd:" prefix)
+  - Implement recipient-specific routing:
+    - chungu@thestackone.com → chungu424@gmail.com only
+    - developer@thestackone.com → chungu424@gmail.com + clivatem@gmail.com
+    - clivate@thestackone.com → clivatem@gmail.com
+    - info@thestackone.com → chungu424@gmail.com + clivatem@gmail.com
+    - Default (any other @thestackone.com) → chungu424@gmail.com + clivatem@gmail.com
+- Deployed updated Lambda and tested both routing scenarios
+- Both fixes confirmed working
+
+Stage Summary:
+- Email sender attribution now shows original sender with "via thestackone.com"
+- Reply-To is set to original sender's email
+- Recipient-specific routing implemented
+- chungu@thestackone.com forwards ONLY to chungu424@gmail.com
