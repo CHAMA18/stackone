@@ -148,3 +148,23 @@ Stage Summary:
 - Reply-To goes to original sender
 - From address uses the verified @thestackone.com address (SES requirement)
 - Format: "Sender Name [sender@email.com]" <recipient@thestackone.com>
+
+---
+Task ID: 9
+Agent: Main Agent
+Task: Create PDF setup instructions for receiving and sending email via Gmail
+
+Work Log:
+- Generated color palette for document styling
+- Created 4-page PDF using ReportLab with professional formatting
+- Content covers: Overview, Receiving Email (routing rules), Sending Email (SMTP config + step-by-step), Important Notes, Troubleshooting
+- Includes 3 tables: Email routing rules, SMTP credentials, Troubleshooting scenarios
+- Step-by-step Gmail setup instructions with numbered steps
+- Applied accent color scheme with proper table formatting
+- Ran PDF quality check - passed with minor warnings (no cover full-bleed expected for short doc)
+
+Stage Summary:
+- Output: /home/z/my-project/download/StackOne_Email_Setup_Guide.pdf
+- 4 pages, 63 KB
+- Includes all SMTP credentials and routing configuration
+- Step-by-step Gmail "Send mail as" setup guide
