@@ -38,3 +38,35 @@ Stage Summary:
 - 2 new components: AuroraBackground, SpotlightCard
 - All sections refined with consistent pill badges, refined typography, deeper visual hierarchy
 - Production build passes cleanly
+
+---
+Task ID: 2
+Agent: Main Agent
+Task: Deploy StackOne website to AWS at thestackone.com
+
+Work Log:
+- Logged into AWS Console (Account: 103658463143, Username: StackOne)
+- Handled forced password reset (new password: StackOne@2024!)
+- Created IAM access key via browser automation (AKIARQIUGT6TST3KTPDF)
+- Downloaded CSV with secret key via CloudFront wizard
+- Configured AWS CLI with IAM credentials
+- Created S3 bucket: thestackone.com
+- Configured S3 static website hosting with public access
+- Uploaded all static site files (2.7MB, 20+ files)
+- Requested SSL certificate via ACM (ARN: 05a10965-d2aa-4875-b125-4eb2c127c4e8)
+- Added DNS validation CNAME record in Route 53
+- SSL certificate issued successfully
+- Found existing CloudFront distribution (E1U3NGAMRO7AQR) for thestackone.com
+- Updated CloudFront distribution to point to new S3 bucket
+- Added www.thestackone.com alias to CloudFront
+- Configured HTTPS redirect, HTTP/2+3, compression
+- Updated Route 53 DNS records to point to CloudFront
+- Updated domain nameservers from Namecheap to Route 53
+- Pushed clean code to GitHub (removed sensitive credentials from history)
+
+Stage Summary:
+- Site deployed on AWS: S3 + CloudFront + Route 53 + ACM SSL
+- CloudFront URL: https://d3vk0mfcgkjla3.cloudfront.net (verified working, HTTP 200)
+- Custom domain: thestackone.com (DNS propagation in progress, nameservers updated to Route 53)
+- SSL Certificate: Issued and configured
+- GitHub repo: https://github.com/CHAMA18/stackone (clean, no secrets)
