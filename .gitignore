@@ -77,4 +77,7 @@ examples/
 Caddyfile
 
 # Worklog
-worklog.md
+worklog.mddownload/aws-credentials.txt
+download/aws-keys.json
+download/credentials.csv
+aws-*.js
