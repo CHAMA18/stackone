@@ -74,3 +74,29 @@ Stage Summary:
 - SMTP Port: 587 with TLS
 - User's error was using smtp.thestackone.com instead of the AWS SES SMTP endpoint
 - The key algorithm fix: version=0x04 + aws4_request terminal step
+
+---
+Task ID: 6
+Agent: Main Agent
+Task: Fix email receiving - Lambda forwarder was broken
+
+Work Log:
+- Investigated email receiving issue
+- MX records correct: 10 inbound-smtp.us-east-1.amazonaws.com
+- SES receiving rules correct and active
+- S3 bucket receiving emails correctly
+- SNS → Lambda trigger working
+- Found root cause: Lambda function crashing with "Cannot find module 'aws-sdk'" since 12:27 UTC May 31
+- The original Lambda used aws-sdk v2 which is NOT bundled in Node.js 20 runtime
+- Rewrote Lambda function using AWS SDK v3 (@aws-sdk/client-s3, @aws-sdk/client-ses) + mailparser
+- Deployed new Lambda code as ES module (index.mjs)
+- Set S3_BUCKET environment variable
+- Tested Lambda - successfully forwards emails to chungu424@gmail.com and clivatem@gmail.com
+- Reprocessed all 10 missed emails that arrived while Lambda was broken
+- All 10 emails successfully forwarded
+
+Stage Summary:
+- Root cause: aws-sdk v2 not available in Node.js 20 Lambda runtime
+- Fix: Rewrote Lambda using @aws-sdk/client-s3, @aws-sdk/client-ses (v3) + mailparser
+- All missed emails reprocessed and delivered
+- Email receiving and forwarding is now fully operational
