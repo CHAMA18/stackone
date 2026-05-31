@@ -1,0 +1,326 @@
+{
+  "cookies": [
+    {
+      "name": "aws-consoleInfo",
+      "value": "eyJ0eXAiOiJKV1MiLCJrZXlSZWdpb24iOiJhcC1zb3V0aGVhc3QtMiIsImFsZyI6IkVTMzg0Iiwia2lkIjoiYzRmNjY4Y2QtZmMyNi00OTVjLWIyOTUtNjYxMjIyYWZlNjk4In0.eyJhdF9oYXNoIjoiQjk1MFgyNVdTRUgzRHpzSkxUNms0TnB5QWRXX3dzWnMiLCJpc3MiOiJodHRwOi8vc2lnbmluLmF3cy5hbWF6b24uY29tL3NpZ25pbiIsInN1YiI6ImFybjphd3M6c2lnbmluOjo6Y29uc29sZS9qYW51cyJ9.aIPGOvyym-q-AhxFwaOOELRyQm91aynCHLMNDMPo4PU_TRewG3xOLvjq5qkMjwhXD4Aa0yQN93-pvmjKH50OZ56WwkXEuaTP4mf-dtVWnWhMwlTGE-HVT4pGU8X7cfiQ",
+      "domain": "ap-southeast-2.console.aws.amazon.com",
+      "path": "/api/prod/credential",
+      "expires": 1780268902.332318,
+      "httpOnly": false,
+      "secure": true,
+      "sameSite": "Strict"
+    },
+    {
+      "name": "aws-creds",
+      "value": "%7B%22iv%22%3A%22EgZKGWultx7ivt6a%22%2C%22message%22%3A%22C5zY1usVEym9Z%2B7b9D6kSqxjRuicZ6sz6pwljxZlPIkqVET9hDz9%2B4sJ8a9fKSvWQc%2FJbFNzUmr2OjpO%2BAiUnoSHT4OC65kI%2BvMktXWtGoflIJORvBWMx0CMzjrknaVwbXmvvrS6MK0lVXK24zP1cie58g99tBhuTQvbQAAv0jABmXb1mdhCqYnySurxJN7Ps5KAt%2BOjgdn3RHnD%2FEpd3WoC2ZD%2B7Aoq0ytuB4LXEDag8l2rpxFwuPgNxLBzXrIPiZwNoSvpNkLbybPAQoXgkdwV%2FdJSRaxIl%2Fq%2FxWBQ1sXoAU2x2pWOGdkroBWUCrP4deE8M37owh%2BooQJIGKmEb1AmXmACpIImJoYx8f3tnUSSSwhiwYKbugc96Obrv7x9riZdcU%2B0O61JQ94Qx2ruG7vCeQfrfawgGMc8k1Ub%2FYPqbOXisFgkq5cFJIDIR8dJ4fBVM2Ia7s0AC3OHbZIC4M2XOexhVa1VxTgLhSUz2hZcC9KS1eGP%2F6K0A5btz7DlYot7kO16Njf%2Fl9ZW3pZ48iTvKrsI8ADxUWdozed9eyJnyVdUZC8X6zruBKGSO6uM5sZ2QPn1aBWvZ%2BOkYO0k2fyakkpQKVeiVFsjL024q4tVlRX%2BKQPbS%2FYxDt0jHem9WJKABwHRzIxHP%2FKIusWIk1E8a2sScSp1UR7eTQbPQyy96a7ybC9AD1icUQg22ExdNNcxo6pY5QjgZ%2BmrPKY1V5z610wT9fA6S5aECubEIZdKYevcX0UrjMwPZ8TCzKLwXh4WQTYglkKqMEuQ3fpVxnJtngwlDbZ6C%2FZAlco%2BBzEvbWTHcmf%2BhD9VFjxMn%2FuqUgye8hQQ0TEpvDQ9Pm7c3D42AXoYsZ2katbvam%2F52O9qps1QPfEhsQrIGTHsk1Dx9Yv5yKpfO5cBC2BepHhLNhBSKUIQkJ%2B5Hn461BzT3lBND%2FA8YLomdYyMbzOvLrdmVBhEt%2FWWTK%2FroWJS%2FGyS8FWGLQ%2FMisla4uiv9%2BJKQ9x7RmXmxSTk401qmnVN1IV9T9X9ELxw4RBaB0EwWngIfTasQ4Xu46P1EwdysAGhmZnEc%2ByjA3aYKL7poxq08J95%2BVB5nC93%2FW1yLQt2WVjQwim5qzXae8LC5eTn9BhArfwOGe5otetfA9B0H3dspzB4bYiAlYs%2FfV1fcAVE8SOfn8tVbYMA1yVXmPWqduy7VR39lxppNMBvTjxM3GFCRW23BhD50mjOghysrecTJYuCvvBiFPgG2Dz%2FtJZ6wdn5bwsipcRDZpL8k3GXalEG2dARxKazqcPj%2FrryRjo5ovhcaTGr81xan%2FJMlt0wRY8gGMfLboG4dRQD9ImzqIDxT6JFJONcNGzLWcqnMtC%2FgC79WdV9Y35XTfvX%2F1IBVBQ0tcRm2CJ%2FKXr2R8DoBk%2FxTKTfKXSLtUPG%2BoOMbHBqIfwBrN8w6hK7x0nSVTJlcJhbyLYd4V8T%2BuU%2F0cNm8YJASXUKyD6euY4f%2B%2BAKl3AsgEMbmrJvi3qLqeCVWDxyekaltYDHUbWvDIQvAoFd2xU%2BPldaGetWxrgV%2BtfnsSHJmsDtnPrwsug1W4LtRs0g7TCPbjaTN5djofTm6TmQQ%2FGv457b1M0yoqMsN7Y%2FOAqNXFvak6IJrH7NSI20aPB%2Fl2SYHC7TsTWpO0rbVgUdKl8lNsv3pU13kuTBhOW60Kg0cc7%2BfRm5hTJoc8OkKEvawtqXeIgY4XXD5c1%2B8zPkBnAAuLDnVda13Do4KPFDoBeo0uG8zhWTU5UY06HTsVHza1JpCLIvRNFaLETZLey8wPg8B70qCVBbyE3L%2FzinFxOlIrgwpd31Wg%3D%3D%22%2C%22keyVersion%22%3A%22T4E_9ITPe84wAo3ic72cFmwVKYjVw9JF%22%2C%22authTag%22%3A%22MX3%2BSs7MPOSdPVAliwOViQ%3D%3D%22%2C%22version%22%3A1%7D",
+      "domain": "ap-southeast-2.console.aws.amazon.com",
+      "path": "/api/prod",
+      "expires": 1780268902.332136,
+      "httpOnly": true,
+      "secure": true,
+      "sameSite": "Strict"
+    },
+    {
+      "name": "aws-creds-code-verifier-79bd",
+      "value": "eyJjb2RlVmVyaWZpZXIiOiJlZmIwZTdhODM3YWJjZmFlOTRhZWYwNzEyODQ4OTFlZDNlZjYyNzZlNGRiMGVlZjAyNDc2N2JlY2E0MGQ2NDE1NTc2ZDM2OWE4YjE5OTI3NTI0ZGNkODZmMTEzMWQ0ZjUzZDg4NWMwZmYxYjNjM2VmOGU1ZjQwZGE1NDFjZmRkNyIsImV4cGlyYXRpb24iOjE3ODAyNjg4NTczMDF9",
+      "domain": "console.aws.amazon.com",
+      "path": "/console",
+      "expires": 1780268857.374052,
+      "httpOnly": true,
+      "secure": true,
+      "sameSite": "Lax"
+    },
+    {
+      "name": "aws-creds-code-verifier-d88b",
+      "value": "eyJjb2RlVmVyaWZpZXIiOiI4MzYwMjEzYmE1ZGFhN2QyZWQ5MTY0NGJkYTYyNzY2OWRjMzRmMjI4ZmQzOWYzOTkyY2ViZjViNTUzZWRhNmZhZmQwODk1OWRiZTljODMwZGUyMzI4N2RiOWQzNjkwYWY2NDA0MmJlZDliNzc4MzA3ZDdiY2YyZGI5YjJiYTMyNyIsImV4cGlyYXRpb24iOjE3ODAyNjg4NjMwMzZ9",
+      "domain": "console.aws.amazon.com",
+      "path": "/console",
+      "expires": 1780268863.10887,
+      "httpOnly": true,
+      "secure": true,
+      "sameSite": "Lax"
+    },
+    {
+      "name": "aws-creds-code-verifier-2a66",
+      "value": "eyJjb2RlVmVyaWZpZXIiOiIwNzEzZGUxMmIwNWRhMjhlOWJlOWRiYzM4NGFiNjA1OGJkNjk5MmU3MTFjMjk1YTJjMzM5MWY2YjFiNmY3MjQ0MzllYTI0MGZjZDI5NTVmNzdhZTk2MjdmNjQ1OWRlZDIzODczNGM5NWNjMGQ0NjU4NTlkNmFiMzlmYjM4OTcxOCIsImV4cGlyYXRpb24iOjE3ODAyNjg4NzkzMjJ9",
+      "domain": "console.aws.amazon.com",
+      "path": "/console",
+      "expires": 1780268879.394593,
+      "httpOnly": true,
+      "secure": true,
+      "sameSite": "Lax"
+    },
+    {
+      "name": "aws-consoleInfo",
+      "value": "eyJ0eXAiOiJKV1MiLCJrZXlSZWdpb24iOiJhcC1zb3V0aGVhc3QtMiIsImFsZyI6IkVTMzg0Iiwia2lkIjoiYzRmNjY4Y2QtZmMyNi00OTVjLWIyOTUtNjYxMjIyYWZlNjk4In0.eyJhdF9oYXNoIjoiQjk1MFgyNVdTRUgzRHpzSkxUNms0TnB5QWRXX3dzWnMiLCJpc3MiOiJodHRwOi8vc2lnbmluLmF3cy5hbWF6b24uY29tL3NpZ25pbiIsInN1YiI6ImFybjphd3M6c2lnbmluOjo6Y29uc29sZS9jYW52YXMifQ.SUFcshbMn36eycxH9SbwjuiNzYEq2q85sb4qqNI1xkfSs8dKTZZxS16rTvB0A36D283ELKEcjtwEHUtcbR4lp3ciT5gXThySDhg2jxjo26Aqoal8GEHyNX1lWl1xYmbb",
+      "domain": "console.aws.amazon.com",
+      "path": "/console",
+      "expires": 1780268902.171385,
+      "httpOnly": false,
+      "secure": true,
+      "sameSite": "Lax"
+    },
+    {
+      "name": "aws-creds",
+      "value": "%7B%22iv%22%3A%22sU6vk8GNUlrrRn3N%22%2C%22message%22%3A%22nGVyKXxgnXx0TKmegVHJ2czB845J%2BYNuhjL9pBfQPkLrsCI4zttkvDgWGA9raJy6nVUySzR47UkOzdxyM90R51nMgmNakEjJZD7vppVBgNc%2Fs3h483GUaLftOtAuw9jjq95KroqmnM709P4PpOQgCiq1OnVBZNTfkTG9ZiaXW2TOYbIqmBkJksRRgE5EWmFFjrHI7gpaj7q3f7SmtlmJlSmu9Uwv1QzD%2F6J%2BHXbYl5P6vSPkmPVtI0l0vIbMWtT%2FSoKCpZUFPgg9OQhvUwIxpaWwXBBtQtMKfwAGca0wqG033WOQjFfIW%2BzHRyJGFYLiwG2ft23%2BMYcBE6XJFbP5vaDYHfEEgxG3qXO8Agn%2Bhex0QKqnpsU%2BdYxhASL4h%2BU61T1FOPTk9T2Au0pRlE2P90%2BgnMG3LwFHSED5MfbHMdzSJQiTTPSkWyXicqZm%2Ffgi3Cl5neLGdfcc2a1IESChfS8TdMgayRu63syFETWexq3Ar5Cgmz%2BX2hoCbvFBuI8ymqyjOJ7DD8y5sU%2FBvxFmwu7ItRTC8kq2giPjCnNJDl39mV%2BdslpL7Hwm0QcVcLHUtmiOvMYb2AcQjFuAq3%2FP0fN8tLEQLBqZMUjH3WCUE79iudV9M4r0fEi6niwUNk4z6Mbty1%2BwrohH4C3G%2Fcxyq2WzkYAMFNSomcE6eOaFV17ixNfPeDsB%2BRkk67dNQYa%2BHPDYKmMXSsHEX03KjfyItNqhYJa6ooT6m405UCL1RZTPOCk4wgotIsTsFrvo7Wbo4xDqgugxpk%2FrrkvAWAwyN0fxq%2FEpV5QF%2B%2FYliD3XzXwy3lpJknV5wBnEKwy6QlmSlKtsCJExllgbBvtNiEWV%2FYTZMQQMH9eLeaVr1m9rEhpA%2BnQ1K2wrt88VhLYfqrGA2Sfuj0Cz0jS1NoP0tu8z%2Fe4eULwm70zds8zOBXOCJE5I7me%2FL2133iQuxKMnXSF8mq8sMO6TIhXiaPz0PnUQmz6gE%2F0Lkjhp8ZHdFFHVuA%2FqqBAOOb154r61UajuSzWylnGG3oqN%2FFwkUs7VZWMME3LUEzg5jFg5bT26Rwb4bLXcqyGJb4iWvynkdvcAs1fJFdVY8kzsspfxXNepFdkAGJWg%2BjX9jYsUJRDl%2BOUXaKqCasW6f%2FuMPdqyuS2ziILIKeKQ49gh5a37Fl1sjXo5nVKa1Jk1AL%2B62w4SbwJjCD5y2P%2BvTy%2Fse55hpz63CTrf%2FZGtBGn1pHdUaAd4YGRKCDXIIjeRz4mLxqF4KIYa%2BwbKchsnn3js0JkuYw2mFq9lSlMRh%2BpiZRqWjMmUE9o6%2Bk1LIGuqci3EZ8d4z4N4qG8sZOXp9GHPDShBmETe9E1kk0l%2B3jQcWm4jGnyyldBg2g3LTdmXBpmHsZjGbbPCXuP%2Bc1uBEUuo%2BCVQaFpjDN7D0b4zOi9QTe66iKnBVJ0PhPH9eU%2BioOZo7HwxczT4QCHgfK8HxIGAcV6iiSfoi2PHbrRIhFqUoIvY2sOrNF%2BTmkHnHovVyMHC36zc%2FVUareDXuAuzMjf9ofnFFoF857JY9PiAYgtYdSOLtUTjLwW0TDlr9WluqhLngPykh4PZCWOrr5xCphg9sb3Znr5FbrVILjqCDRVJZaaUu8kOS6D3D0u%2FbTiyFZINOlVIIHqT%2B6xrLbsCfnXDNUc1tjcY4Z4F2RZXjYvKdApOYQ4QO2kqXxlr%22%2C%22keyVersion%22%3A%22twgrCSehmmjRT65xODbBXkhqwdYHAtdk%22%2C%22authTag%22%3A%22q158KtrCkIK3TdyN0IUnlg%3D%3D%22%2C%22version%22%3A1%7D",
+      "domain": "console.aws.amazon.com",
+      "path": "/console",
+      "expires": 1780268902.171621,
+      "httpOnly": true,
+      "secure": true,
+      "sameSite": "Lax"
+    },
+    {
+      "name": "aws-consoleInfo",
+      "value": "eyJ0eXAiOiJKV1MiLCJrZXlSZWdpb24iOiJhcC1zb3V0aGVhc3QtMiIsImFsZyI6IkVTMzg0Iiwia2lkIjoiYzRmNjY4Y2QtZmMyNi00OTVjLWIyOTUtNjYxMjIyYWZlNjk4In0.eyJhdF9oYXNoIjoiQjk1MFgyNVdTRUgzRHpzSkxUNms0TnB5QWRXX3dzWnMiLCJpc3MiOiJodHRwOi8vc2lnbmluLmF3cy5hbWF6b24uY29tL3NpZ25pbiIsInN1YiI6ImFybjphd3M6c2lnbmluOjo6Y29uc29sZS9jYW52YXMifQ.cqjh9a-Cn3v-1d0fxyRl5P0Y096o81uyiZWmISTgYTdptWj25NRW-Wj-ui0XTQ0a9Jc3jwuh1c61PJg9Xnpf5XvRwnH5gE0jXBqi-fwJ-ERnRTGxjKt6P_6A6S_Le8P1",
+      "domain": "ap-southeast-2.console.aws.amazon.com",
+      "path": "/console",
+      "expires": 1780268902.491658,
+      "httpOnly": false,
+      "secure": true,
+      "sameSite": "Lax"
+    },
+    {
+      "name": "aws-creds",
+      "value": "%7B%22iv%22%3A%22Wo%2B0VZOjTVUmXrlc%22%2C%22message%22%3A%22SlBLGy%2FQ5L%2F0Ya1qTS8F0aNJ%2F9kbL8fhJ9C4RYptA50hh05bwDquF2Q%2FMqodVSsbtdtGeKfAHVgrPrj4sPoAkbKN%2BYH0V4qB19keAJnWxEIh7nw3nYQqawwoZokbaad3GvhyEGN1hvIcd8wVwSgXt3lMnDxr4lYXCNSzpCal0XAxLQ%2BU9caQKsccqydu1pvQZpVL694YotGhjiW%2Fm%2Fjs1aEwhEpyr7r7GcJnFLAL72nTJxlkxO%2B0kynbBMllvMq5uBViIOexX%2FmG2STFFC5%2BvNpLvo3GLjohOiv7nN%2F%2FPkY4Zcj5MuIm9UYdXqdqg4W%2BwrF1vlQMg6FmAvoJAzDqqzPs%2FcsCVKP3VY0y7cCfK2924qYH3lAqyOk1ZfbwNs2%2BslOVv3Jz%2FiB%2F82Ss86Tw7lo7ryd1qpoOVsANgMQEM%2FLRORVWdUBWX5PcWQQYSaZMbTWodL1SkmxFMM8Yf4JJF2wvs6jhgskBMi%2Fqjq0l6KGfegTDxOExU4t7q01lxNLjmYv8HNJFN1fXCI%2FySk3n8%2BScjkpcfuxVbPIvLafeagkDs2fRFxxr8fwxtln1uNXGiFMI0rJYXadu8FYDPvM8IrUiyIUnSccAxnp0GZ1389xf3GuxnJMsaHyAE5%2Byi%2BwEkVddSnXC%2Fr3XynbHsilPazvwYu1TO24sPBx1sjbqCyl4F3QfKuq6Yc41SHrUUzwm4amsrwER1Y1r8aezrqLp6ChMudqOkqtM5HxXg%2BykXOLY2n4Ode48%2F9yXWhQ3hcG%2BVCRm4JRJfa1Pq8aEwT8nT%2BcJ8qXm6r4cWmJG5GGbX1FYuXis2kNsQX0EMYeBLhl0eDuMNUf8iEqhuhQmMKishj1S09hftTrqHeuJ%2BE5yGct6J7UxQqh4WKDfceT%2B%2Bm1zdinT%2BusD6q2NH7yQebX0%2BeOgRXEIRpLYn0SzF6mNnAtkkcEiIlTRjFepOWeZmZP0iFgBEwjUGGl4cRaIIIs%2BKjfLuUqLc0v12Vq%2B2SI3YM6BOII2JhMtwIcdrS4Ckt4s8PciBsi7BGA%2BjsjXt5kF9aOR3ZXaT5OD9Eqil%2FvvScfOEr0ktQuaiw%2Bh7%2FZeiwQ4WBNRKo60aVIw2OKhEcbJain4lwge4b%2BYCwNg5PHMmzFkNHivbRVv00xdk85D%2Fy6S5krjLn%2BfXYJCehrLC6gjAl%2BhQDwCsui%2Fd3BmWYFx0TbAFeqBbamsAwcN%2FFWr47Tq%2ByW0JvJ3e2VFee5fM2DiOeteteA8UF0kUjip88YltZXjDC04qCL7q3hPUEExId1ebPzWfNr9%2Fq7fv9NtcJdI3Qei%2FHV1GxbRwQUVWAGR0F7wrwuiKkrHNGCnojztPfiuyqYezbwRyIRXyypgZVqr6Ufkt2zwwYBbd%2FJE%2Bn8uJc%2BZnZ0CAhp9rVX3f9OfW92JA%2FWogigxJpJ%2FGKsTHdcj5jA0UPQRgUmZfx9IXy5DQSSZWsMPDfXoG02SYXxNx%2Bbo6F%2FcDe%2FkpDdWB4IUhH%2BweelEB9gwykqcE1KpkabydDx2opy6xmjRpM7dnBKnwyEkVxaDT%2FMUecHJ0AF0A%2B2PUoUHUUFXphN9CYFR6UInRYLYmSrlCcDO1YontkLVkxwwdLMgLD%2FAehDYM7FvTIs0J1K0K5CRu58iFLIzu2OD7KM0Uf0K3ueZvyHk1IT57KvObp9rN1dhAfy79Mgm7tsMgw%3D%3D%22%2C%22keyVersion%22%3A%22twgrCSehmmjRT65xODbBXkhqwdYHAtdk%22%2C%22authTag%22%3A%22144Tj3URJ6GjAD9ceS2NMQ%3D%3D%22%2C%22version%22%3A1%7D",
+      "domain": "ap-southeast-2.console.aws.amazon.com",
+      "path": "/console",
+      "expires": 1780268902.761393,
+      "httpOnly": true,
+      "secure": true,
+      "sameSite": "Lax"
+    },
+    {
+      "name": "aws-ubid-main",
+      "value": "402-7246130-6780185",
+      "domain": ".amazon.com",
+      "path": "/",
+      "expires": 1811761656.745008,
+      "httpOnly": true,
+      "secure": true,
+      "sameSite": "None"
+    },
+    {
+      "name": "aws-account-alias",
+      "value": "103658463143",
+      "domain": ".amazon.com",
+      "path": "/",
+      "expires": 1811761701.941423,
+      "httpOnly": false,
+      "secure": true,
+      "sameSite": "Lax"
+    },
+    {
+      "name": "aws-vid",
+      "value": "2a5d5c82-5830-40c8-b00c-ffe2bd60eb2c",
+      "domain": ".aws.amazon.com",
+      "path": "/",
+      "expires": 1814785704.331296,
+      "httpOnly": false,
+      "secure": true,
+      "sameSite": "Lax"
+    },
+    {
+      "name": "remember-account",
+      "value": "false",
+      "domain": ".amazon.com",
+      "path": "/",
+      "expires": 1811761701.941294,
+      "httpOnly": false,
+      "secure": true,
+      "sameSite": "Lax"
+    },
+    {
+      "name": "aws-account-data",
+      "value": "%7B%22marketplaceGroup%22%3A%22AWS%22%7D",
+      "domain": ".aws.amazon.com",
+      "path": "/",
+      "expires": 1811761701.941475,
+      "httpOnly": false,
+      "secure": true,
+      "sameSite": "None"
+    },
+    {
+      "name": "aws-userInfo",
+      "value": "%7B%22arn%22%3A%22arn%3Aaws%3Aiam%3A%3A103658463143%3Auser%2FStackOne%22%2C%22alias%22%3A%22103658463143%22%2C%22username%22%3A%22StackOne%22%2C%22keybase%22%3A%22HR7vWFpI15FjRLxfdQ6V08RNvhj98OthQ8O8mCeHrTw%5Cu003d%22%2C%22issuer%22%3A%22http%3A%2F%2Fsignin.aws.amazon.com%2Fsignin%22%2C%22signinType%22%3A%22PUBLIC%22%7D",
+      "domain": ".amazon.com",
+      "path": "/",
+      "expires": 1811761701.94151,
+      "httpOnly": false,
+      "secure": true,
+      "sameSite": "None"
+    },
+    {
+      "name": "aws-userInfo-signed",
+      "value": "eyJ0eXAiOiJKV1MiLCJrZXlSZWdpb24iOiJhcC1zb3V0aGVhc3QtMiIsImFsZyI6IkVTMzg0Iiwia2lkIjoiYzRmNjY4Y2QtZmMyNi00OTVjLWIyOTUtNjYxMjIyYWZlNjk4In0.eyJzdWIiOiIxMDM2NTg0NjMxNDMiLCJzaWduaW5UeXBlIjoiUFVCTElDIiwiaXNzIjoiaHR0cDovL3NpZ25pbi5hd3MuYW1hem9uLmNvbS9zaWduaW4iLCJrZXliYXNlIjoiSFI3dldGcEkxNUZqUkx4ZmRRNlYwOFJOdmhqOThPdGhROE84bUNlSHJUdz0iLCJhcm4iOiJhcm46YXdzOmlhbTo6MTAzNjU4NDYzMTQzOnVzZXIvU3RhY2tPbmUiLCJ1c2VybmFtZSI6IlN0YWNrT25lIn0.9lYH5Z_wk6HviPBx-qWgO7lMTmNP5nUXB1JUXTSDbJVaanrwdxOAlb94ftkS3XIIIOaL5P1vIgkh0_q_7A2DJc_5f4ZHKJWkavgWifKOeCh-WGB_hQgbrkHswODZz3EL",
+      "domain": ".amazon.com",
+      "path": "/",
+      "expires": 1811761701.941531,
+      "httpOnly": false,
+      "secure": true,
+      "sameSite": "Lax"
+    },
+    {
+      "name": "aws-creds",
+      "value": "stFsDZ7MvfbJH8B17cSevVbraIZYAxWpROAXyReZkpFz4A-Mc6MI93N8nxnx9nrmEdWbIAXuBN7Cva78WPp7GThV_GPGDH9rYOXgmNhzrYV2-FQ5RsKILYTCC6iJmvQ3onWUy1EnQB6nKGfuoiyfwFXpF0U8ExUmRZTfTMLeSFpyamdhUkSjUBP0wvjWh40MUtawo96H-LKn9NDrP2bJi4aQM-WYlzr0dRPqSAJ2uPqdpXFUtEE6zSz7krjQJXiws5GZ8O6NVPq3LIR-FqAQFa9pbwrVQb4LaaSt5xsVepzzRzwl2KlwC68iD6AzatqhOCn2YCTviUiW6nN1dJ5CNubu9pEWfyqe-FmJcBxBSWy0piOd-2M6qlTPR_fMniATEAdOU0QYAaH8ZhDLe1CpFXLtSthP1VYkbIxsVF8lYXUQ4EJhL17wJsXTtLDh_lCh4JMudFagPUQhCyWbr6wiCzhOB6hE6wjpQ70rwZtU0bc4ZlMqg2bj_mIiH-E5oW5AtAfZ2AGvDqFcTxc6bITcS5cIp5H2Cwb9B7GVvYwsoz81RonTY3NOVI9OkS2Jeaf8dAsNb5NsTXsRWagn0Ln9umD6cRYHstl-aiODp-OchgpIlSt4NSy5zUgpPS_c4bzO_tETkwE7qgkHC3N7twjJ_7YyNpcPa6Oly8lRyni1-W-6tkXvWlrLUwr5hXjRXQv8ainuB3XYOyuE81HLIvaAnaXj6T4oWePD7X8T12sgOoJzeI2b7zKvuZ5T9AXPWIiSpm-5yjwYEdt8LANAPMvi8iY_b0Bd2VQfFZSp21bx76FZ_PjQ27LnT6Hxq_WeOCtYYI6JwXxGaaCklh4a9WjzVtb34Zbdh2p9TzmoZfMtL3sFqbPKnTBAyR1hg2icmVpkImn6k3pkctVV6ZoB3K2bgtVJ9Oz3Z8ILei1_FPLtkV786da3CS_8uEQhnlRVY1CZYGp9u5rQdTCTr4cZ5ST3vMpSLvrQAT_XGjl4Pui_CFs74O5LOdc9bBOyrcFZVbhRUXpFaXSaeEUej5sV1Z4i9DnvXQsr7sJo6QKhZmeW9k4O6Omuvf-ye6xCq5vOuz_tmrgSMsP8It51malkRA55EeUXse4C2PuLsDDelbtsrIcvtMw1odB62ywJpPqmfLtgcAQQ2F5csRxJ5_jjx8hDzJ6EBB6QPt-7EYtA24T2jB1ChV3gUum5OmSj-OKMilQTDrBR8twMLS4ad_P6i1r7V_SSoLq-jat8Z5UIh_5bOnBKuYa1-z78OryGTHD1jpu5ODKPQUHDqyQSAMw2_S2y-B8Tgt2LNOtci7cGaayqQYnuXFBa1h57lDk_0Psp5R7D8ah-_HdYG95-MIVnUgkERNDL7GnQDNenZsz4kAFPNYIQHCKa3p74tdsFlV5huaah6yQ2UORukHWOnsAMHQHegHQCmh52Dv2U8kShE9heD8j9pZFdkAhGUhdT2I9uK9GzBv-WHS5Uwm-MEPFClQZrd1chE7OeXB-h_-ieg9XT6r0lcg7Zxmw2KyMdDRes4Zt2kfXBkJlJ0dNtn3a476ToOV3Kc5NDR7MxobgU2pT-Ppxh7rtmFz93DV06fL_OGwoYdKX3N9tCEjH-Uh-FTUW8XEIFKFIKLF75w6KO0uoOQtIt4MsuwFw1gD56BNvnz4vluFLiJ9m-JKrW6w7j0_9x8zXSGG1XWMJBVDLUtY2w2bMeZDz6pLbfMQ",
+      "domain": ".signin.aws.amazon.com",
+      "path": "/",
+      "expires": 1811761701.941581,
+      "httpOnly": true,
+      "secure": true,
+      "sameSite": "None"
+    },
+    {
+      "name": "aws-prism-private-beta-allowlisted",
+      "value": "true",
+      "domain": ".amazon.com",
+      "path": "/",
+      "expires": 1780268900.941623,
+      "httpOnly": false,
+      "secure": true,
+      "sameSite": "None"
+    },
+    {
+      "name": "__Secure-aws-prism-allowlist-cache",
+      "value": "9W-pXK3-pdIJfUGHgnULv-8RiOx_QJ-_IJ8haLFgrpKmzsiE03GSvnBnJFCoIi8D",
+      "domain": ".signin.aws.amazon.com",
+      "path": "/",
+      "expires": 1811782653.941643,
+      "httpOnly": true,
+      "secure": true,
+      "sameSite": "None"
+    },
+    {
+      "name": "regStatus",
+      "value": "registered",
+      "domain": ".amazon.com",
+      "path": "/",
+      "expires": 1811761701.941668,
+      "httpOnly": false,
+      "secure": false,
+      "sameSite": "Lax"
+    },
+    {
+      "name": "noflush_awsccs_sid",
+      "value": "cb7e7bb228060da2022212963bb22fbdb5d6cd9bbc948bcd30db5e520d1fcdac",
+      "domain": ".amazon.com",
+      "path": "/",
+      "expires": 1781089702.395502,
+      "httpOnly": false,
+      "secure": true,
+      "sameSite": "Lax"
+    },
+    {
+      "name": "awsccc",
+      "value": "eyJlIjoxLCJwIjoxLCJmIjoxLCJhIjoxLCJpIjoiMWZmNDRiYmMtMGQxZi00ODYwLThkYmMtM2Q3Y2FhYjZjYmE3IiwidiI6IjEifQ==",
+      "domain": ".aws.amazon.com",
+      "path": "/",
+      "expires": 1780312104.330317,
+      "httpOnly": false,
+      "secure": true,
+      "sameSite": "Lax"
+    },
+    {
+      "name": "aws-signer-token_ap-southeast-2",
+      "value": "eyJrZXlWZXJzaW9uIjoiVDRFXzlJVFBlODR3QW8zaWM3MmNGbXdWS1lqVnc5SkYiLCJ2YWx1ZSI6IjJQd3pUbVFtdGNRaHYxK2s2Zkp1Ulh1OE5HRWxld2w4eWFpTDZzeWlqM2s9IiwidmVyc2lvbiI6MX0=",
+      "domain": ".amazon.com",
+      "path": "/",
+      "expires": 1780268902.332275,
+      "httpOnly": false,
+      "secure": true,
+      "sameSite": "Strict"
+    },
+    {
+      "name": "noflush_Region",
+      "value": "ap-southeast-2",
+      "domain": ".console.aws.amazon.com",
+      "path": "/",
+      "expires": 1782817705,
+      "httpOnly": false,
+      "secure": true,
+      "sameSite": "Lax"
+    },
+    {
+      "name": "last-sign-in-session",
+      "value": "cb7e7bb2286da222212963bb22fbdb5d6cd9bbc948bcd30db5e52d1fcdac",
+      "domain": ".ap-southeast-2.console.aws.amazon.com",
+      "path": "/",
+      "expires": -1,
+      "httpOnly": false,
+      "secure": true,
+      "sameSite": "Lax"
+    },
+    {
+      "name": "aperture-survey",
+      "value": "true",
+      "domain": ".aws.amazon.com",
+      "path": "/",
+      "expires": -1,
+      "httpOnly": false,
+      "secure": false,
+      "sameSite": "Lax"
+    },
+    {
+      "name": "awsc-settings-info",
+      "value": "103658463143&default&1780225707563+StackOne%2520Innovations",
+      "domain": ".console.aws.amazon.com",
+      "path": "/",
+      "expires": 1780312107,
+      "httpOnly": false,
+      "secure": true,
+      "sameSite": "Lax"
+    },
+    {
+      "name": "awsc-rac",
+      "value": "AKL00|BAH00|BKK00|CGK11|CPT11|DXB11|HKG11|HYD11|KUL00|MEL11|MXP11|QRO00|TLV11|TPE00|YYC11|ZAZ11|ZRH11@1780225708107",
+      "domain": ".console.aws.amazon.com",
+      "path": "/",
+      "expires": -1,
+      "httpOnly": false,
+      "secure": true,
+      "sameSite": "Lax"
+    },
+    {
+      "name": "toolsExperience",
+      "value": "{}",
+      "domain": ".console.aws.amazon.com",
+      "path": "/",
+      "expires": 1811782635,
+      "httpOnly": false,
+      "secure": true,
+      "sameSite": "Lax"
+    }
+  ],
+  "origins": [
+    {
+      "origin": "https://ap-southeast-2.console.aws.amazon.com",
+      "localStorage": [
+        {
+          "name": "client-side-session-cache-key",
+          "value": "{\"version\":\"1\",\"arn:aws:iam::103658463143:user/StackOne\":{\"ccs-caller-dashboard-console-home-unified\":{\"results\":{\"src\":\"head-script\",\"succeeded\":false,\"errorCode\":\"DASHBOARD_NOT_FOUND\"}},\"load-dashboard-configuration-console-home-unified\":{\"results\":{\"src\":\"head-script\",\"succeeded\":false,\"errorCode\":\"DASHBOARD_NOT_FOUND\"}},\"ccs-caller-settings-unifiedExperienceLastWidgetAnnouncementDismissedTimestamp\":{\"results\":{\"src\":\"head-script\",\"succeeded\":true,\"settings\":{}}},\"ccs-caller-settings-consoleHomeRTLegalNoticeDismissedTimestamp\":{\"results\":{\"src\":\"head-script\",\"succeeded\":true,\"settings\":{}}},\"ccs-caller-dashboard-console-home-application-summary\":{\"results\":{\"src\":\"head-script\",\"succeeded\":false,\"errorCode\":\"DASHBOARD_NOT_FOUND\"}},\"load-dashboard-configuration-console-home-application-summary\":{\"results\":{\"src\":\"head-script\",\"succeeded\":false,\"errorCode\":\"DASHBOARD_NOT_FOUND\"}}}}"
+        },
+        {
+          "name": "console-api-cache-cp",
+          "value": "%7B%22sessionHash%22%3A%22Mz0FF2bAeVQ1GkD1AsmbM7HiAnWdTNbW%22%2C%22region%22%3A%22ap-southeast-2%22%7D"
+        },
+        {
+          "name": "showDisabledDomainsFlashBar",
+          "value": "false"
+        },
+        {
+          "name": "awsc-fms",
+          "value": "{\"p\":{\"01G7YTJ5EBV45B4Y9962AERQ4K#5dc5e848\":{\"f\":{\"myApplications-Region-ca-west-1\":false,\"favorite-applications-appWidget\":true},\"e\":1780830504866},\"01GZ2J9N8398RE0BAMV4QR8HF4#5dc5e848\":{\"f\":{\"uxc-vrs-use-prod-endpoint\":true,\"uxc-vrs-page-restricted-redirect\":true,\"uxc-visible-regions-and-services\":true,\"test\":false,\"tela-banner\":false,\"support-repost-url\":true,\"starter-home\":false,\"return-selected-mezz-content\":false,\"regions-menu-links\":true,\"regions-availability\":true,\"quick-settings\":true,\"page-title\":false,\"paddy-widget-v2\":false,\"local-zones\":true,\"is-prism-enabled\":true,\"is-optin-modal-disabled\":true,\"is-list-applications-module-enabled\":true,\"is-favorites-recents-module-enabled\":true,\"ga-test\":false,\"free-tier-v2\":true,\"experimental-preview-modal\":false,\"experimental-preview\":false,\"dxb-notification-banner\":false,\"console-tools\":false,\"color-and-locale-cookie-domain\":false,\"billing-cost-management\":true,\"bah-notification-banner\":false,\"auxs-client\":true,\"acma-smart-app-banner\":true,\"account-name\":true,\"account-color\":true},\"e\":1780830505059},\"01JVNW988VHFZB6W1K1HCXRVE7#9306bb14\":{\"f\":{\"resourceGuidanceEnabled\":true,\"consoleResourceGuidanceWorkflowEnabled\":true,\"bowerbirdContainerTesting\":false,\"bowerbirdContainerEnabled\":true,\"bowerbirdContainerDisabled\":false,\"accessTroubleshooterWorkflowEnabled\":false,\"accessDeniedWorkflowEnabled\":false,\"accessDeniedWorkflowDisabled\":false,\"accessDeniedReplacement\":false,\"accessDeniedEnabled\":false,\"accessDeniedDisabled\":false},\"e\":1780830506059},\"01H6YRQ09B3HC8ZDQX3BH3411A#6f210c55\":{\"f\":{\"validatePermissionsOnMount\":true,\"userPreferences\":true,\"useWorkerModuleCameoAPI\":true,\"useRTSClient\":false,\"subscriptionBadging\":true,\"streaming\":true,\"qLeftDrawerButtonInNavigation\":false,\"persistCurrentConversation\":true,\"loadOnDemand\":true,\"launchExperience\":true,\"enableTextClarifyingQuestions\":false,\"enableTestWidgetStage\":false,\"enableTelaArtifacts\":false,\"enableTelaAgentLoop\":true,\"enableTaskManagerEndpoints\":false,\"enableTableDslStreaming\":true,\"enableSupportSubscriptionBadge\":true,\"enableSupportCenterIntegration\":false,\"enableRunInCloudShell\":true,\"enableQGatekeeperEndpoint\":false,\"enableQChatTelaRedesign\":true,\"enableQAdditionalContext\":true,\"enablePersonalization\":true,\"enablePartnerAssistant\":true,\"enablePanelNavigationHeader\":false,\"enablePCAgents\":true,\"enableNewScrollBehavior\":true,\"enableInteractionProtocol\":true,\"enableIAMFallback\":false,\"enableHomeScreenRevamp\":true,\"enableFollowupSuggestions\":false,\"enableFeatureTour\":false,\"enableDevConsoleAgentTools\":false,\"enableConversationHistory\":true,\"enableConditionalFlags\":true,\"enableCodeLicenses\":true,\"enableBillieVisualizations\":true,\"enableAgentTools\":false,\"enableActivityPanel\":false,\"disableParsingModuleLinkPayload\":false,\"disableGlobalDrawer\":false,\"cortado\":true,\"conversationalExperienceDisabled\":false,\"companion\":false,\"claude-v2\":false,\"chatExperienceEnabled\":true,\"actionCenter\":false},\"e\":1780830506061},\"01JVMZKBQP8SF6SKRYXHXRN9QB#2bc90242\":{\"f\":{\"qInLeftDrawer\":false,\"enableConditionalFlags\":true,\"dispatchDrawerUpdate\":false,\"disableGlobalDrawer\":false,\"disableCompassState\":false,\"companion\":false,\"actionCenter\":false},\"e\":1780830506089},\"01G7YTJ5EBV45B4Y9962AERQ4K#6e3c7862\":{\"f\":{\"myApplications-Region-ca-west-1\":false,\"favorite-applications-appWidget\":true},\"e\":1780830506208},\"01GZ2J9N8398RE0BAMV4QR8HF4#6e3c7862\":{\"f\":{\"uxc-vrs-use-prod-endpoint\":true,\"uxc-vrs-page-restricted-redirect\":true,\"uxc-visible-regions-and-services\":true,\"test\":false,\"tela-banner\":false,\"support-repost-url\":true,\"starter-home\":false,\"return-selected-mezz-content\":false,\"regions-menu-links\":true,\"regions-availability\":true,\"quick-settings\":true,\"page-title\":false,\"paddy-widget-v2\":false,\"local-zones\":true,\"is-prism-enabled\":true,\"is-optin-modal-disabled\":true,\"is-list-applications-module-enabled\":true,\"is-favorites-recents-module-enabled\":true,\"ga-test\":false,\"free-tier-v2\":true,\"experimental-preview-modal\":false,\"experimental-preview\":false,\"dxb-notification-banner\":false,\"console-tools\":false,\"color-and-locale-cookie-domain\":false,\"billing-cost-management\":true,\"bah-notification-banner\":false,\"auxs-client\":true,\"acma-smart-app-banner\":true,\"account-name\":true,\"account-color\":true},\"e\":1780830506252},\"01HDPCPD1K0F9KQBW9QQCXHPGM#5dc5e848\":{\"f\":{\"troubleshooting-resolution-step\":false,\"enforce-feedback\":false,\"enableResizingAndDragging\":false,\"enableProfilePicker\":true,\"enableMinimizing\":false,\"enableAllErrors\":false,\"bowerbirdEnabledTestRegions\":true,\"bowerbird-test-error-template-states\":true,\"bowerbird-test-error-template-home\":false,\"bowerbird-test-error-template-athena\":false,\"bowerbird-test-error-template-all\":false,\"bowerbird-test\":false,\"bowerbird-launch\":true,\"bowerbird-gamma\":false,\"bowerbird-alpha\":false,\"analysis-troubleshooting-step\":true},\"e\":1780830506741},\"01GF1D4BGCNW25WMMGFPS0EZKP#b10401ff\":{\"f\":{\"use-console-api-domain\":true,\"trim-aws-amazon-in-user-query\":true,\"semantic-search-bedrock-kb\":true,\"search-overlay\":false,\"resource-search-tpe\":false,\"resource-search-on-by-default\":true,\"resource-search-bkk-qro\":true,\"resource-search-akl\":true,\"preview-limit-3\":true,\"fetch-es-marketplace-data\":true,\"enable-marketplace-semantic-search\":true,\"enable-ask-amazon-q-button\":true},\"e\":1780830507012},\"01GCVZK31R6TE552E61G7XRB43#fe4f1d18\":{\"f\":{\"panorama-prompt-trigger\":true},\"e\":1780830507136},\"01JVNW988VHFZB6W1K1HCXRVE7#2bc90242\":{\"f\":{\"resourceGuidanceEnabled\":true,\"consoleResourceGuidanceWorkflowEnabled\":true,\"bowerbirdContainerTesting\":false,\"bowerbirdContainerEnabled\":true,\"bowerbirdContainerDisabled\":false,\"accessTroubleshooterWorkflowEnabled\":false,\"accessDeniedWorkflowEnabled\":false,\"accessDeniedWorkflowDisabled\":false,\"accessDeniedReplacement\":false,\"accessDeniedEnabled\":false,\"accessDeniedDisabled\":false},\"e\":1780830509345},\"01K5H96858VTKYJ45ETSNSA8FH#2bc90242\":{\"f\":{\"RdsRecommendations\":false,\"PersonalizationContext\":false,\"LimitRecommendations\":false,\"DismissActionRecommendations\":true,\"ActionRecommendationsModule\":false},\"e\":1780830509353},\"01HV4Z5B0WEAGQKJDC33C2NZ5B#2bc90242\":{\"f\":{\"q-profiles\":true,\"delete-me\":false,\"cortado-enabled\":true,\"console-enabled-vpcconsole\":true,\"console-enabled-systems-manager\":true,\"console-enabled-states\":true,\"console-enabled-sqs\":true,\"console-enabled-sns\":true,\"console-enabled-secretsmanager\":true,\"console-enabled-route53\":false,\"console-enabled-rds\":false,\"console-enabled-organizations\":false,\"console-enabled-lambda\":true,\"console-enabled-lam\":false,\"console-enabled-iot\":true,\"console-enabled-imagebuilder\":true,\"console-enabled-events\":true,\"console-enabled-elasticache\":true,\"console-enabled-eks\":true,\"console-enabled-ecs\":false,\"console-enabled-ecr\":true,\"console-enabled-ec2\":true,\"console-enabled-dynamodbv2\":true,\"console-enabled-cw\":false,\"console-enabled-cognito\":true,\"console-enabled-cloudwatch\":true,\"console-enabled-c2ctest\":false,\"console-enabled-batch\":true,\"console-enabled-athena\":true,\"cloudshell-integration\":true,\"cfn-iac-gen\":false,\"c2c-v2\":true,\"alchemist-widget-enabled\":false},\"e\":1780830509358},\"01J67QXX2AZE93SM8722PY9RJ3#2bc90242\":{\"f\":{\"unified-tabs-decoupling\":true,\"sidecar-prod-policy\":false,\"resource-navigation-enabled\":true,\"ody-xa\":true,\"ody-st-oc\":true,\"ody-hypothesis-viz\":true,\"ody-hyp-grp\":true,\"ody-helios\":true,\"ody-agn\":true,\"investigations-sidecar\":true,\"cssLim\":false,\"create-inv-resource-deprecation\":false,\"cloudwatch-unified-tool-assistant-enabled\":true,\"cloudwatch-unified-tool-assistant-disabled\":false},\"e\":1780830509368},\"01K8X32KMW0N0B0MXFQ5X91FKP#2bc90242\":{\"f\":{\"workflow-resume\":false,\"wfd-AWSLaunchAndScaleWithLoadBalancer\":true,\"wfd-AWSCreateS3DriveAndMountToInstance\":true,\"wfd-AWSConnectS3BucketToInstance\":true,\"custom-views\":false,\"aperture-feedback\":true},\"e\":1780830509393}},\"i\":\"1v4c706v2u1h7b4e3n2f\",\"ui\":\"efbf1b55\"}"
+        }
+      ]
+    },
+    {
+      "origin": "https://ap-southeast-2.signin.aws.amazon.com",
+      "localStorage": [
+        {
+          "name": "amznfbgid",
+          "value": "X06-6568689-8466352:1780225668"
+        }
+      ]
+    }
+  ]
+}
