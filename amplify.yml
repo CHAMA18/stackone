@@ -3,11 +3,15 @@ frontend:
   phases:
     preBuild:
       commands:
-        - npm install
+        - nvm install 20
+        - nvm use 20
+        - node -v
+        - npm ci
         - npx prisma generate
     build:
       commands:
-        - npm run build
+        - env | grep -E 'NEXTAUTH|DATABASE|NODE_ENV' || true
+        - NODE_OPTIONS="--max_old_space_size=4096" npm run build
   artifacts:
     baseDirectory: .next
     files:
