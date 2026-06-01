@@ -1,0 +1,115 @@
+name: Deploy to AWS Amplify
+
+on:
+  push:
+    branches: [main]
+  workflow_dispatch:
+
+env:
+  AWS_REGION: us-east-1
+  AMPLIFY_APP_NAME: mailflow
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    permissions:
+      id-token: write
+      contents: read
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+
+      - name: Configure AWS Credentials
+        uses: aws-actions/configure-aws-credentials@v4
+        with:
+          aws-access-key-id: ${{ secrets.AWS_ACCESS_KEY_ID }}
+          aws-secret-access-key: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
+          aws-region: ${{ env.AWS_REGION }}
+
+      - name: Check for existing Amplify app
+        id: check-app
+        run: |
+          APP_ID=$(aws amplify list-apps \
+            --query "apps[?name=='${{ env.AMPLIFY_APP_NAME }}'].appId" \
+            --output text 2>/dev/null || echo "")
+          if [ -z "$APP_ID" ] || [ "$APP_ID" = "None" ]; then
+            echo "app_exists=false" >> $GITHUB_OUTPUT
+          else
+            echo "app_exists=true" >> $GITHUB_OUTPUT
+            echo "app_id=$APP_ID" >> $GITHUB_OUTPUT
+          fi
+
+      - name: Create Amplify App
+        if: steps.check-app.outputs.app_exists == 'false'
+        id: create-app
+        run: |
+          APP_ID=$(aws amplify create-app \
+            --name ${{ env.AMPLIFY_APP_NAME }} \
+            --description "StackOne Mailflow - Next.js SSR Application" \
+            --platform WEB_COMPUTE \
+            --repository https://github.com/${{ github.repository }} \
+            --access-token ${{ secrets.GITHUB_TOKEN }} \
+            --environment-variables \
+              NEXTAUTH_SECRET=${{ secrets.NEXTAUTH_SECRET }} \
+              NEXTAUTH_URL=https://thestackone.com \
+              NODE_ENV=production \
+            --build-spec '{"version":1,"frontend":{"phases":{"preBuild":{"commands":["npm install","npx prisma generate"]},"build":{"commands":["npm run build"]}},"artifacts":{"baseDirectory":".next","files":["**/*"]},"cache":{"paths":["node_modules/**/*",".next/cache/**/*"]}}}' \
+            --query 'app.appId' \
+            --output text \
+            --region ${{ env.AWS_REGION }})
+          echo "app_id=$APP_ID" >> $GITHUB_OUTPUT
+
+      - name: Create Production Branch
+        run: |
+          APP_ID="${{ steps.check-app.outputs.app_id || steps.create-app.outputs.app_id }}"
+          BRANCH_EXISTS=$(aws amplify get-branch \
+            --app-id "$APP_ID" \
+            --branch-name main \
+            --query 'branch.branchName' \
+            --output text 2>/dev/null || echo "")
+          if [ -z "$BRANCH_EXISTS" ] || [ "$BRANCH_EXISTS" = "None" ]; then
+            aws amplify create-branch \
+              --app-id "$APP_ID" \
+              --branch-name main \
+              --stage PRODUCTION \
+              --region ${{ env.AWS_REGION }}
+          fi
+
+      - name: Setup Custom Domain
+        run: |
+          APP_ID="${{ steps.check-app.outputs.app_id || steps.create-app.outputs.app_id }}"
+          DOMAIN_EXISTS=$(aws amplify get-domain-association \
+            --app-id "$APP_ID" \
+            --domain-name thestackone.com \
+            --query 'domainAssociation.domainStatus' \
+            --output text 2>/dev/null || echo "")
+          if [ -z "$DOMAIN_EXISTS" ] || [ "$DOMAIN_EXISTS" = "None" ]; then
+            aws amplify create-domain-association \
+              --app-id "$APP_ID" \
+              --domain-name thestackone.com \
+              --sub-domain-settings prefix="",branchName=main \
+              --region ${{ env.AWS_REGION }} || true
+          fi
+
+      - name: Trigger Deployment
+        run: |
+          APP_ID="${{ steps.check-app.outputs.app_id || steps.create-app.outputs.app_id }}"
+          JOB_ID=$(aws amplify start-deployment \
+            --app-id "$APP_ID" \
+            --branch-name main \
+            --source-url "https://github.com/${{ github.repository }}/archive/refs/heads/main.zip" \
+            --query 'jobSummary.jobId' \
+            --output text \
+            --region ${{ env.AWS_REGION }} || echo "")
+          echo "Deployment triggered. Job ID: $JOB_ID"
+
+      - name: Deployment Summary
+        run: |
+          APP_ID="${{ steps.check-app.outputs.app_id || steps.create-app.outputs.app_id }}"
+          echo "## Deployment Summary" >> $GITHUB_STEP_SUMMARY
+          echo "" >> $GITHUB_STEP_SUMMARY
+          echo "- **App ID**: $APP_ID" >> $GITHUB_STEP_SUMMARY
+          echo "- **Region**: ${{ env.AWS_REGION }}" >> $GITHUB_STEP_SUMMARY
+          echo "- **Domain**: https://thestackone.com" >> $GITHUB_STEP_SUMMARY
+          echo "- **Console**: https://console.aws.amazon.com/amplify/home?region=${{ env.AWS_REGION }}#/$APP_ID" >> $GITHUB_STEP_SUMMARY
