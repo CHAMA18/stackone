@@ -176,7 +176,7 @@ export function HeroParticles() {
   return (
     <canvas
       ref={canvasRef}
-      className="absolute inset-0 z-0 pointer-events-auto opacity-60"
+      className="absolute inset-0 z-0 pointer-events-none opacity-60"
     />
   );
 }

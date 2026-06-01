@@ -495,6 +495,7 @@
   background: linear-gradient(135deg, #5060ff 0%, #3b4fff 100%);
   opacity: 0;
   transition: opacity 0.4s ease;
+  pointer-events: none;
 }
 
 .btn-primary:hover {

@@ -1,6 +1,5 @@
 "use client";
 
-import Link from "next/link";
 import { HeroParticles } from "@/components/hero-particles";
 import { MouseGradient } from "@/components/mouse-gradient";
 import { PremiumCursor } from "@/components/premium-cursor";
@@ -231,6 +230,7 @@ export default function Home() {
             <span className="text-gradient-subtle">StackOne</span>
           </a>
 
+          {/* Desktop nav links */}
           <div className="hidden md:flex items-center gap-10">
             {NAV_LINKS.map((link) => (
               <a
@@ -244,8 +244,10 @@ export default function Home() {
             ))}
           </div>
 
-          <div className="hidden md:flex items-center gap-4">
-            <div className="flex items-center gap-2 px-3 py-1.5 rounded-full border border-white/[0.05] bg-white/[0.02]">
+          {/* Auth buttons - visible on ALL screen sizes */}
+          <div className="flex items-center gap-3 md:gap-4">
+            {/* Desktop-only availability badge */}
+            <div className="hidden md:flex items-center gap-2 px-3 py-1.5 rounded-full border border-white/[0.05] bg-white/[0.02]">
               <span className="relative flex h-1.5 w-1.5">
                 <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-green-400 opacity-75" />
                 <span className="relative inline-flex rounded-full h-1.5 w-1.5 bg-green-400" />
@@ -254,18 +256,18 @@ export default function Home() {
                 Available
               </span>
             </div>
-            <Link
+            <a
               href="/auth/signin"
-              className="text-on-surface-variant/50 hover:text-on-surface transition-colors duration-300 text-[10px] uppercase tracking-[0.15em] font-medium"
+              className="text-on-surface-variant/50 hover:text-on-surface transition-colors duration-300 text-[10px] md:text-[10px] uppercase tracking-[0.15em] font-medium"
             >
               Sign In
-            </Link>
-            <Link
+            </a>
+            <a
               href="/auth/register"
-              className="inline-flex items-center justify-center btn-primary text-white px-7 py-2.5 rounded-lg uppercase tracking-[0.15em] text-[10px] font-bold relative z-10"
+              className="inline-flex items-center justify-center btn-primary text-white px-5 md:px-7 py-2 md:py-2.5 rounded-lg uppercase tracking-[0.15em] text-[10px] font-bold relative z-10"
             >
               <span className="relative z-10">Get Started</span>
-            </Link>
+            </a>
           </div>
         </div>
       </nav>
@@ -313,18 +315,18 @@ export default function Home() {
 
               {/* CTA buttons */}
               <div className="flex flex-col sm:flex-row items-center justify-center gap-4 pt-4 animate-slide-up-fade delay-300">
-                <Link
+                <a
                   className="w-full sm:w-auto inline-flex items-center justify-center btn-primary text-white px-12 py-4 rounded-xl hover:scale-[1.02] transition-all duration-400 ease-out uppercase tracking-[0.2em] text-[11px] font-bold relative z-10"
                   href="/auth/register"
                 >
                   <span className="relative z-10">Get Started</span>
-                </Link>
-                <Link
+                </a>
+                <a
                   className="w-full sm:w-auto inline-flex items-center justify-center btn-secondary px-12 py-4 rounded-xl transition-all duration-400 ease-out uppercase tracking-[0.2em] text-[11px] text-on-surface/70 font-medium"
                   href="/auth/signin"
                 >
                   Sign In
-                </Link>
+                </a>
               </div>
             </div>
           </div>
@@ -694,7 +696,7 @@ export default function Home() {
                     Partner with StackOne to engineer your next extraordinary
                     digital product. From concept to scale, we deliver excellence.
                   </p>
-                  <Link
+                  <a
                     className="relative z-10 inline-flex items-center justify-center btn-primary text-white px-16 py-5 rounded-xl hover:scale-[1.02] transition-all duration-400 uppercase tracking-[0.2em] text-[12px] font-bold shadow-xl shadow-primary/15"
                     href="/auth/register"
                   >
@@ -702,7 +704,7 @@ export default function Home() {
                       Get Started
                       <span className="material-symbols-outlined text-[16px]">arrow_forward</span>
                     </span>
-                  </Link>
+                  </a>
                 </div>
               </div>
             </ScrollReveal>
